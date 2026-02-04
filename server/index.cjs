@@ -44,14 +44,64 @@ app.get('/api/notices', async (req, res) => {
     }
 });
 
-// POST a new notice
-app.post('/api/notices', async (req, res) => {
+const fs = require('fs');
+const path = require('path');
+const multer = require('multer');
+
+// Configure Multer
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        const uploadPath = path.join(__dirname, '../public/uploads/notices');
+        // Ensure directory exists
+        if (!fs.existsSync(uploadPath)) {
+            fs.mkdirSync(uploadPath, { recursive: true });
+        }
+        cb(null, uploadPath);
+    },
+    filename: (req, file, cb) => {
+        // Unique filename: date-originalName
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, uniqueSuffix + path.extname(file.originalname));
+    }
+});
+
+const upload = multer({ storage: storage });
+
+app.post('/api/notices', upload.single('pdf'), async (req, res) => {
+    console.log("Received Notice Upload Request");
+    console.log("Content-Type:", req.headers['content-type']); // DEBUG: Check what client is sending
+
+    // Debug: Log complete headers and body
+    // console.log("Headers:", req.headers);
+    // console.log("Body:", req.body);
+    // console.log("File:", req.file);
+
     try {
+        if (!req.body) {
+            throw new Error("Request body is empty or undefined. Multer failed to parse.");
+        }
+
+        // Multer puts text fields in key-value pairs in req.body.
+        // Even if no file is uploaded, req.body should be populated.
         const { title, content, date } = req.body;
-        const notice = new Notice({ title, content, date });
+
+        if (!title || !content || !date) {
+            throw new Error("Missing required fields: title, content, or date");
+        }
+
+        let filePath = null;
+        if (req.file) {
+            // Save relative path for frontend access
+            // e.g., /uploads/notices/filename.pdf
+            filePath = `/uploads/notices/${req.file.filename}`;
+        }
+
+        const notice = new Notice({ title, content, date, filePath });
         await notice.save();
+        console.log("Notice saved:", notice);
         res.json({ "message": "success", "data": notice, "id": notice._id });
     } catch (err) {
+        console.error("Error saving notice:", err);
         res.status(400).json({ "error": err.message });
     }
 });
@@ -137,6 +187,4 @@ app.post('/api/login', (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+

@@ -88,11 +88,10 @@ h6 {
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     z-index: 1000;
     padding: 1rem 0;
-    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .navbar-content {
@@ -102,7 +101,6 @@ h6 {
 }
 
 .logo {
-    font-family: var(--font-family-heading);
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-primary);
@@ -119,11 +117,51 @@ h6 {
     text-decoration: none;
     color: var(--color-text);
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
     color: var(--color-secondary);
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content a {
+    color: var(--color-text);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--color-light-gray);
+    color: var(--color-primary);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .menu-toggle {
@@ -260,6 +298,22 @@ h6 {
     min-width: 250px;
 }
 
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: white;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: var(--color-accent);
+    transform: translateY(-3px);
+}
+
 .footer-section h4 {
     color: var(--color-accent);
     margin-bottom: 1rem;
@@ -306,6 +360,39 @@ h6 {
     min-height: 80vh;
 }
 
+/* Founder/About Styles */
+.founder-card {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 12px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.founder-img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .founder-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .founder-img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+}
+
 .about-section,
 .academics-section {
     margin-bottom: 3rem;
@@ -335,6 +422,34 @@ h6 {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
+}
+
+/* Values Section Styles */
+.values-card {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+}
+
+.values-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.values-content {
+    flex: 2;
+}
+
+@media (max-width: 768px) {
+    .values-card {
+        flex-direction: column;
+    }
+
+    .values-image {
+        width: 100%;
+        min-width: auto;
+    }
 }
 
 .dept-card {
@@ -415,40 +530,109 @@ h6 {
     border-color: var(--color-secondary);
 }
 
-/* Notices */
-.notice-archive {
-    margin-top: 2rem;
+/* iOS 26 Aesthetic - Light Blue Theme */
+
+/* Mesh Gradient Background (Light Blue) */
+.notice-page-container {
+    background-color: #e0f7fa;
+    background-image:
+        radial-gradient(at 0% 0%, hsla(190, 100%, 90%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(210, 100%, 85%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(200, 100%, 95%, 1) 0, transparent 50%);
+    min-height: 100vh;
+    padding: 8rem 1rem 4rem;
+    color: #003366;
+    /* Dark Blue Text */
 }
 
-.notice-item {
-    background: white;
-    border-bottom: 1px solid #eee;
-    padding: 2rem 0;
+/* Vertical Feed Layout */
+.notice-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 3rem auto;
 }
 
-.notice-date {
-    color: var(--color-accent);
-    font-weight: bold;
-    font-size: 0.9rem;
+/* Light Glassmorphism Card */
+.ios-card {
+    background: rgba(255, 255, 255, 0.6);
+    /* Semi-transparent White */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 51, 102, 0.1);
+    /* Soft Blue Shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ios-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 12px 30px rgba(0, 51, 102, 0.15);
+}
+
+/* Typography & Elements */
+.notice-date-pill {
+    display: inline-block;
+    background: rgba(0, 51, 102, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #00509E;
     margin-bottom: 0.5rem;
 }
 
-.read-more {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: var(--color-secondary);
+.ios-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #003366;
+    letter-spacing: -0.5px;
+}
+
+.ios-content {
+    color: #445566;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.btn-glass {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #00509E;
+    color: white;
+    padding: 0.6rem 1.25rem;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 80, 158, 0.3);
+}
+
+.btn-glass:hover {
+    background: #003366;
+    transform: translateY(-1px);
 }
 
 /* Carousel Styles */
 .carousel-container {
     position: relative;
     height: 90vh;
-    /* Match previous hero height */
+    width: 100%;
     overflow: hidden;
     margin-top: 80px;
-    /* Navbar offset */
+    /* Offset for fixed navbar */
 }
 
 .carousel-slide {
@@ -457,14 +641,14 @@ h6 {
     left: 0;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 
 .carousel-slide.active {
@@ -472,7 +656,6 @@ h6 {
     z-index: 1;
 }
 
-/* Dark overlay for better text readability */
 .carousel-slide::before {
     content: '';
     position: absolute;
@@ -480,22 +663,23 @@ h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 51, 102, 0.4);
+    background: rgba(0, 0, 0, 0.4);
+    /* Dark overlay for text readability */
 }
 
 .carousel-content {
     position: relative;
     z-index: 2;
+    text-align: center;
     color: white;
     max-width: 800px;
-    padding: 0 1rem;
+    padding: 2rem;
 }
 
 .carousel-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     color: white;
-    /* Override default primary color */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -516,62 +700,30 @@ h6 {
     padding: 1rem;
     cursor: pointer;
     z-index: 10;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
     transition: background 0.3s;
 }
 
 .carousel-control:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.5);
 }
 
-.prev {
-    left: 1rem;
+.carousel-control.prev {
+    left: 2rem;
 }
 
-.next {
-    right: 1rem;
+.carousel-control.next {
+    right: 2rem;
 }
 
-/* Gallery Styles */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-}
-
-.gallery-item {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    cursor: pointer;
-}
-
-.gallery-item:hover {
-    transform: scale(1.02);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-}
-
-.gallery-caption {
+/* Adjust Notice Board Position in Carousel */
+.carousel-container .notice-board-container {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 1rem;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    color: white;
-    font-weight: 500;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.gallery-item:hover .gallery-caption {
-    opacity: 1;
+    z-index: 20;
+    background: rgba(0, 51, 102, 0.9);
+    /* More opaque for readability */
 }
