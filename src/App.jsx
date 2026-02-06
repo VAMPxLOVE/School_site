@@ -21,10 +21,17 @@ import Admissions from './components/Admissions';
 import Contact from './components/Contact';
 import Gallery from './components/Gallery';
 import Results from './components/Results';
+import Downloads from './components/Downloads';
+import SchoolCalendar from './components/SchoolCalendar';
+import ParentConduct from './components/ParentConduct';
+import WelcomeScreen from './components/WelcomeScreen';
+import Faculty from './components/Faculty';
+import Chatbot from './components/Chatbot';
 
 function App() {
     return (
         <Router>
+            <WelcomeScreen />
             <div id="app-container" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
                 <Navigation />
                 <main id="main-content" style={{ flexGrow: 1 }}>
@@ -38,15 +45,20 @@ function App() {
                         <Route path="/founder" element={<Founder />} />
                         <Route path="/vision" element={<Vision />} />
                         <Route path="/mission" element={<Mission />} />
+                        <Route path="/faculty" element={<Faculty />} />
 
                         <Route path="/academics" element={<Academics />} />
                         <Route path="/admissions" element={<Admissions />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/gallery" element={<Gallery />} />
                         <Route path="/results" element={<Results />} />
+                        <Route path="/downloads" element={<Downloads />} />
+                        <Route path="/calendar" element={<SchoolCalendar />} />
+                        <Route path="/conduct" element={<ParentConduct />} />
                     </Routes>
                 </main>
                 <Footer />
+                <Chatbot />
             </div>
         </Router>
     );

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { API_BASE_URL } from '../config';
+
 const NoticeBoard = () => {
     const [notices, setNotices] = useState([]);
 
     useEffect(() => {
         const fetchNotices = async () => {
             try {
-                const res = await fetch('/api/notices');
+                const res = await fetch(`${API_BASE_URL}/api/notices`);
                 const data = await res.json();
                 if (data.data) {
                     setNotices(data.data);
@@ -27,7 +29,7 @@ const NoticeBoard = () => {
                     {notices.length > 0 ? (
                         notices.map((notice, index) => (
                             <li key={index}>
-                                <span style={{ color: '#FFD700' }}>★</span> {notice.title} - {notice.date}
+                                <span style={{ color: '#FFD700' }}>★</span> {notice.title} - {notice.date.split('-').reverse().join('/')}
                                 {notice.filePath &&
                                     <span style={{ marginLeft: '5px', fontSize: '0.8em', background: 'white', color: 'blue', padding: '2px 5px', borderRadius: '3px' }}>
                                         PDF

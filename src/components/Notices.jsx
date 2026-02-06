@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 const Notices = () => {
     const [notices, setNotices] = useState([]);
@@ -8,7 +9,7 @@ const Notices = () => {
     useEffect(() => {
         const fetchNotices = async () => {
             try {
-                const res = await fetch('/api/notices');
+                const res = await fetch(`${API_BASE_URL}/api/notices`);
                 const data = await res.json();
                 if (data.data) {
                     setNotices(data.data);
@@ -39,7 +40,7 @@ const Notices = () => {
                     ) : notices.length > 0 ? (
                         notices.map((notice, index) => (
                             <article key={index} className="ios-card">
-                                <div className="notice-date-pill">📅 {notice.date}</div>
+                                <div className="notice-date-pill">📅 {notice.date.split('-').reverse().join('/')}</div>
                                 <h3 className="ios-title">{notice.title}</h3>
                                 <p className="ios-content">{notice.content}</p>
                                 {notice.filePath && (

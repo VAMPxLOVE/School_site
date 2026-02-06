@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 const Admin = () => {
     const navigate = useNavigate();
@@ -14,18 +15,26 @@ const Admin = () => {
     // Messages State
     const [messages, setMessages] = useState([]);
 
+    // Result Form State
+    const [resultName, setResultName] = useState('');
+    const [resultRollNo, setResultRollNo] = useState('');
+    const [resultAdmissionNo, setResultAdmissionNo] = useState('');
+    const [resultDob, setResultDob] = useState('');
+    const [resultClass, setResultClass] = useState('');
+    const [resultMarks, setResultMarks] = useState({ Math: '', Science: '', English: '', Hindi: '', SST: '' });
+
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (!token) {
             navigate('/login');
-            return; // Stop execution
+            return;
         }
         fetchMessages();
     }, [navigate]);
 
     const fetchMessages = async () => {
         try {
-            const res = await fetch('/api/messages');
+            const res = await fetch(`${API_BASE_URL}/api/messages`);
             const data = await res.json();
             if (data.data) setMessages(data.data);
         } catch (err) {
@@ -44,7 +53,7 @@ const Admin = () => {
         }
 
         try {
-            const res = await fetch('/api/notices', {
+            const res = await fetch(`${API_BASE_URL}/api/notices`, {
                 method: 'POST',
                 body: formData
             });
@@ -52,18 +61,50 @@ const Admin = () => {
 
             if (res.ok) {
                 alert('Notice Posted Successfully!');
-                // Reset form
                 setNoticeTitle('');
                 setNoticeDate('');
                 setNoticeContent('');
                 setNoticeFile(null);
-                // Reset file input manually if needed, or by key
             } else {
                 alert('Failed to post notice: ' + (result.error || 'Unknown error'));
             }
         } catch (err) {
             console.error(err);
             alert('Error posting notice');
+        }
+    };
+
+    const handleResultSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await fetch(`${API_BASE_URL}/api/results`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    student_name: resultName,
+                    roll_no: resultRollNo,
+                    admission_no: resultAdmissionNo,
+                    dob: resultDob,
+                    class: resultClass,
+                    marks: resultMarks
+                })
+            });
+            const result = await res.json();
+
+            if (res.ok) {
+                alert('Result Uploaded Successfully!');
+                setResultName('');
+                setResultRollNo('');
+                setResultAdmissionNo('');
+                setResultDob('');
+                setResultClass('');
+                setResultMarks({ Math: '', Science: '', English: '', Hindi: '', SST: '' });
+            } else {
+                alert('Failed to upload result: ' + (result.error || 'Unknown error'));
+            }
+        } catch (err) {
+            console.error(err);
+            alert('Error uploading result');
         }
     };
 
@@ -110,60 +151,73 @@ const Admin = () => {
                     <form onSubmit={handleNoticeSubmit}>
                         <div className="form-group">
                             <label>Title</label>
-                            <input
-                                type="text"
-                                required
-                                value={noticeTitle}
-                                onChange={(e) => setNoticeTitle(e.target.value)}
-                            />
+                            <input type="text" required value={noticeTitle} onChange={(e) => setNoticeTitle(e.target.value)} />
                         </div>
                         <div className="form-group">
                             <label>Date</label>
-                            <input
-                                type="date"
-                                required
-                                value={noticeDate}
-                                onChange={(e) => setNoticeDate(e.target.value)}
-                            />
+                            <input type="date" required value={noticeDate} onChange={(e) => setNoticeDate(e.target.value)} />
                         </div>
                         <div className="form-group">
                             <label>Content</label>
-                            <textarea
-                                required
-                                rows="4"
-                                value={noticeContent}
-                                onChange={(e) => setNoticeContent(e.target.value)}
-                            ></textarea>
+                            <textarea required rows="4" value={noticeContent} onChange={(e) => setNoticeContent(e.target.value)}></textarea>
                         </div>
-
-                        {/* File Upload Input */}
                         <div className="form-group" style={{ background: 'rgba(0,0,0,0.05)', padding: '1rem', borderRadius: '8px', border: '1px dashed #ccc' }}>
                             <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                                 <span style={{ fontSize: '1.5rem' }}>📎</span>
                                 <strong>Attach PDF File</strong> (Optional)
                             </label>
-                            <input
-                                type="file"
-                                accept="application/pdf"
-                                onChange={(e) => setNoticeFile(e.target.files[0])}
-                                style={{ marginTop: '0.5rem' }}
-                            />
-                            <p style={{ fontSize: '0.8rem', color: '#666', marginTop: '0.5rem' }}>
-                                Only .pdf files are allowed. This file will be downloadable from the notice board.
-                            </p>
+                            <input type="file" accept="application/pdf" onChange={(e) => setNoticeFile(e.target.files[0])} style={{ marginTop: '0.5rem' }} />
                         </div>
-
                         <button type="submit" className="btn btn-primary">Post Notice</button>
                     </form>
                 </div>
             )}
 
-            {/* Results Tab (Placeholder functionality for now) */}
+            {/* Results Tab */}
             {activeTab === 'results' && (
                 <div className="tab-content glass" style={{ padding: '2rem', borderRadius: '8px' }}>
                     <h3>Upload Student Result</h3>
-                    <p>Result upload functionality would go here (similar form).</p>
-                    {/* Add Result Form Logic Here if needed, skipped for brevity in migration */}
+                    <form onSubmit={handleResultSubmit}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                            <div className="form-group">
+                                <label>Student Name</label>
+                                <input type="text" required value={resultName} onChange={(e) => setResultName(e.target.value)} />
+                            </div>
+                            <div className="form-group">
+                                <label>Class</label>
+                                <input type="text" required value={resultClass} onChange={(e) => setResultClass(e.target.value)} />
+                            </div>
+                            <div className="form-group">
+                                <label>Roll Number</label>
+                                <input type="text" required value={resultRollNo} onChange={(e) => setResultRollNo(e.target.value)} />
+                            </div>
+                            <div className="form-group">
+                                <label>Admission Number</label>
+                                <input type="text" required value={resultAdmissionNo} onChange={(e) => setResultAdmissionNo(e.target.value)} />
+                            </div>
+                            <div className="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" required value={resultDob} onChange={(e) => setResultDob(e.target.value)} />
+                            </div>
+                        </div>
+
+                        <h4 style={{ marginTop: '1.5rem', marginBottom: '1rem', borderBottom: '1px solid #ccc', paddingBottom: '0.5rem' }}>Subjects & Marks</h4>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1rem' }}>
+                            {Object.keys(resultMarks).map((subject) => (
+                                <div key={subject} className="form-group">
+                                    <label>{subject}</label>
+                                    <input
+                                        type="number"
+                                        required
+                                        value={resultMarks[subject]}
+                                        onChange={(e) => setResultMarks({ ...resultMarks, [subject]: e.target.value })}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        <button type="submit" className="btn btn-primary" style={{ marginTop: '1rem' }}>Upload Result</button>
+                    </form>
                 </div>
             )}
 

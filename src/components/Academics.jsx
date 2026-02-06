@@ -27,7 +27,7 @@ const Academics = () => {
             </section>
             <section className="academics-section">
                 <h2>Academic Calendar</h2>
-                <p>Download our <a href="#" style={{ color: 'var(--color-primary)' }}>Annual Calendar 2026-27</a> (PDF)</p>
+                <p>View our detailed <Link to="/calendar" style={{ color: 'var(--color-primary)' }}>Annual Calendar 2026-27</Link> for exam dates and holidays.</p>
             </section>
         </div>
     );

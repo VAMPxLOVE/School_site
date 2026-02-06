@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
+import { API_BASE_URL } from '../config';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    });
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('/api/contact', { // Assuming endpoint exists or just demo
+            const res = await fetch(`${API_BASE_URL}/api/contact`, { // Assuming endpoint exists or just demo
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
+                body: JSON.stringify({ name, email, subject, message })
             });
             if (res.ok) {
                 alert('Message Sent Successfully!');
@@ -67,19 +62,47 @@ const Contact = () => {
                     <form id="contact-form" className="contact-form" onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="c-name">Name</label>
-                            <input type="text" id="c-name" name="name" required value={formData.name} onChange={handleChange} />
+                            <input
+                                type="text"
+                                id="c-name"
+                                name="name"
+                                required
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="c-email">Email</label>
-                            <input type="email" id="c-email" name="email" required value={formData.email} onChange={handleChange} />
+                            <input
+                                type="email"
+                                id="c-email"
+                                name="email"
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="c-subject">Subject</label>
-                            <input type="text" id="c-subject" name="subject" required value={formData.subject} onChange={handleChange} />
+                            <input
+                                type="text"
+                                id="c-subject"
+                                name="subject"
+                                required
+                                value={subject}
+                                onChange={(e) => setSubject(e.target.value)}
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="c-message">Message</label>
-                            <textarea id="c-message" name="message" rows="5" required value={formData.message} onChange={handleChange}></textarea>
+                            <textarea
+                                id="c-message"
+                                name="message"
+                                rows="5"
+                                required
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                            ></textarea>
                         </div>
                         <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Send Message</button>
                     </form>

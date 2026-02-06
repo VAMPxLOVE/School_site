@@ -25,9 +25,18 @@ const Navigation = () => {
                             <li><Link to="/founder" onClick={() => setIsMobileMenuOpen(false)}>Founder's Desk</Link></li>
                             <li><Link to="/vision" onClick={() => setIsMobileMenuOpen(false)}>Vision</Link></li>
                             <li><Link to="/mission" onClick={() => setIsMobileMenuOpen(false)}>Mission & Values</Link></li>
+                            <li><Link to="/faculty" onClick={() => setIsMobileMenuOpen(false)}>Meet Our Faculty</Link></li>
                         </ul>
                     </li>
-                    <li><Link to="/academics" onClick={() => setIsMobileMenuOpen(false)}>Academics</Link></li>
+                    <li className="dropdown">
+                        <Link to="/academics" onClick={() => setIsMobileMenuOpen(false)}>Academics ▾</Link>
+                        <ul className="dropdown-content">
+                            <li><Link to="/academics" onClick={() => setIsMobileMenuOpen(false)}>Overview</Link></li>
+                            <li><Link to="/calendar" onClick={() => setIsMobileMenuOpen(false)}>School Calendar</Link></li>
+                            <li><Link to="/conduct" onClick={() => setIsMobileMenuOpen(false)}>Parent & Visitor Conduct</Link></li>
+                            <li><Link to="/downloads" onClick={() => setIsMobileMenuOpen(false)}>Download Center</Link></li>
+                        </ul>
+                    </li>
                     <li><Link to="/admissions" onClick={() => setIsMobileMenuOpen(false)}>Admissions</Link></li>
                     <li><Link to="/results" onClick={() => setIsMobileMenuOpen(false)}>Results</Link></li>
                     <li><Link to="/gallery" onClick={() => setIsMobileMenuOpen(false)}>Gallery</Link></li>
