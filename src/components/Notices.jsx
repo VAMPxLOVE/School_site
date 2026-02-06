@@ -9,6 +9,7 @@ const Notices = () => {
     useEffect(() => {
         const fetchNotices = async () => {
             try {
+                console.log(`Fetching notices from: ${API_BASE_URL}/api/notices`);
                 const res = await fetch(`${API_BASE_URL}/api/notices`);
                 const data = await res.json();
                 if (data.data) {
