@@ -24,55 +24,41 @@ You need a cloud database because your local MongoDB (`localhost`) won't work on
 
 ---
 
-## Step 2: Deploy Backend (Node.js) to Render
-[Render](https://render.com) is great for Node.js backends.
+## Step 2: Deploy Backend to Railway (Alternative to Render)
+[Railway](https://railway.app) is a powerful hosting platform that is often faster and easier than Render.
 
-1.  Push your code to **GitHub** (if you haven't already).
-2.  Sign up on [Render.com](https://render.com) using GitHub.
-3.  Click **New +** -> **Web Service**.
-4.  Select your repository.
-5.  **Settings**:
-    *   **Root Directory**: `server` (Important! Your backend is in this subfolder).
-    *   **Build Command**: `npm install`
-    *   **Start Command**: `node index.cjs`
-6.  **Environment Variables** (Scroll down):
-    *   Add `MONGO_URI` -> Paste your MongoDB connection string from Step 1.
-    *   Add `PORT` -> `3000` (or let Render assign one, usually it sets PORT auto).
-7.  Click **Create Web Service**.
-8.  Wait for deployment. specific URL will be generated (e.g., `https://school-api.onrender.com`).
-    *   **Save this URL**.
+1.  Go to [Railway.app](https://railway.app) and login with GitHub.
+2.  Click **+ New Project** -> **Deploy from GitHub repo**.
+3.  Select your repository.
+4.  Railway will automatically detect the Node.js app.
+5.  **Variables** (Environment):
+    *   Click on the project card -> **Variables**.
+    *   Add `MONGO_URI` -> Paste your MongoDB connection string.
+    *   Add `PORT` -> `3000` (Optional, Railway handles this).
+6.  **Generate Domain**:
+    *   Go to **Settings** -> **Networking**.
+    *   Click **Generate Domain**.
+    *   **Save this URL** (e.g., `https://web-production-1234.up.railway.app`).
 
 ---
 
 ## Step 3: Configure Frontend to talk to Live Backend
-Before deploying the frontend, you need to tell it to use the *Live Backend URL* instead of `localhost:3000`.
-
-1.  Open your project in VS Code.
-2.  Find where you fetch data (e.g., `src/components/Notices.jsx`, `Login.jsx`, etc.).
-3.  Ideally, create a utility or use Vite environment variables.
-    *   Create `.env.production` file in root:
-        ```
-        VITE_API_URL=https://your-backend-url.onrender.com
-        ```
-4.  **Important**: If you have hardcoded `fetch('/api/...')` in your code (using the proxy in `vite.config.js`), that proxy **won't work** in production on Vercel.
-    *   You must update your fetch calls to point to the full URL in production.
-    *   *Example update needed*:
-        ```javascript
-        const BASE_URL = import.meta.env.VITE_API_URL || '';
-        fetch(`${BASE_URL}/api/notices`)
-        ```
+1.  In your local project, open `DEPLOYMENT.md` (this file).
+2.  You don't need to change code if you used the `src/config.js` setup.
+3.  Just make sure you set the `VITE_API_URL` in the next step (Netlify).
 
 ---
 
-## Step 4: Deploy Frontend to Vercel
-1.  Go to [Vercel.com](https://vercel.com) and sign up with GitHub.
-2.  Click **Add New Project**.
-3.  Select your repository.
-4.  **Framework Preset**: Vite.
-5.  **Root Directory**: `./` (Default is fine).
-6.  **Environment Variables**:
-    *   `VITE_API_URL`: `https://your-backend-url.onrender.com`
-7.  Click **Deploy**.
+## Step 4: Deploy Frontend to Netlify
+1.  Go to [Netlify.com](https://www.netlify.com) and sign up with GitHub.
+2.  Click **Add new site** -> **Import from existing project**.
+3.  Select **GitHub** and choose your repository.
+4.  **Build Settings**:
+    *   **Build command**: `npm run build`
+    *   **Publish directory**: `dist`
+5.  **Environment Variables** (Click "Show advanced" or go to Site Settings later):
+    *   Key: `VITE_API_URL`
+    *   Value: `https://your-render-backend-url.onrender.com` (Your live backend URL)
+6.  Click **Deploy Site**.
 
-## Alternative: Deploy Everything on Railway
-If you want fewer distinct services, [Railway.app](https://railway.app) is excellent but has a smaller free tier limit. It can detect both your Node server and Vite frontend, but separating them (like above) is usually free-tier friendlier.
+*Note: Netlify is excellent for the frontend. Your backend will still run on Render to handle the database and API.*
