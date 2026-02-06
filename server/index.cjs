@@ -1,7 +1,9 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const connectDB = require('./db.cjs');
+const fs = require('fs');
+const path = require('path');
+const multer = require('multer');
 
 // Models
 const Notice = require('./models/Notice.cjs');
@@ -9,30 +11,41 @@ const Result = require('./models/Result.cjs');
 const Message = require('./models/Message.cjs');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Connect to MongoDB
-connectDB().then(async () => {
-    // Optional: Seed Notices if empty
-    const count = await Notice.countDocuments();
-    if (count === 0) {
-        await Notice.insertMany([
-            { title: "Admissions Open", content: "Admissions for 2026-27 are now open. Apply online.", date: "2026-01-30" },
-            { title: "Football Championship", content: "Our team won the regional cup!", date: "2026-01-25" },
-            { title: "Winter Break", content: "School closed until Jan 15th.", date: "2026-01-10" }
-        ]);
-        console.log("Seeded initial notices.");
+// Ensure Upload Directory Exists on Startup
+const uploadDir = path.join(__dirname, '../public/uploads/notices');
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+    console.log(`Created upload directory: ${uploadDir}`);
+}
+
+// Configure Multer
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, uploadDir); // Use the pre-calculated path
+    },
+    filename: (req, file, cb) => {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, uniqueSuffix + path.extname(file.originalname));
     }
-
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
 });
 
+const upload = multer({ storage: storage });
+
+// Connect to MongoDB (Non-blocking for Vercel)
+connectDB();
+
 // API Routes
+
+// Health Check
+app.get('/api/health', (req, res) => {
+    res.json({ status: "ok", message: "Server is running 🚀" });
+});
 
 // GET all notices
 app.get('/api/notices', async (req, res) => {
@@ -44,15 +57,22 @@ app.get('/api/notices', async (req, res) => {
     }
 });
 
-// POST a new notice
-app.post('/api/notices', async (req, res) => {
+// POST new notice
+app.post('/api/notices', upload.single('pdf'), async (req, res) => {
+    // ... (keep existing logic, abbreviated for safety, assuming file content is same) ...
     try {
+        if (!req.body || Object.keys(req.body).length === 0) {
+            return res.status(400).json({ "error": "Request body is empty." });
+        }
         const { title, content, date } = req.body;
-        const notice = new Notice({ title, content, date });
+        let filePath = null;
+        if (req.file) filePath = `/uploads/notices/${req.file.filename}`;
+
+        const notice = new Notice({ title, content, date, filePath });
         await notice.save();
-        res.json({ "message": "success", "data": notice, "id": notice._id });
+        res.json({ "message": "success", "data": notice });
     } catch (err) {
-        res.status(400).json({ "error": err.message });
+        res.status(500).json({ "error": err.message });
     }
 });
 
@@ -69,7 +89,7 @@ app.post('/api/contact', async (req, res) => {
     }
 });
 
-// Fetch Messages (Admin)
+// Fetch Messages
 app.get('/api/messages', async (req, res) => {
     try {
         const messages = await Message.find().sort({ _id: -1 });
@@ -79,64 +99,50 @@ app.get('/api/messages', async (req, res) => {
     }
 });
 
-// Fetch Result by Roll No
-app.get('/api/results/:rollNo', async (req, res) => {
+// Secure Fetch Result
+app.get('/api/search_result', async (req, res) => {
     try {
-        const result = await Result.findOne({ roll_no: req.params.rollNo });
-        res.json({ "message": "success", "data": result });
+        const { rollNo, admissionNo, class: studentClass, dob } = req.query;
+        if (!rollNo || !admissionNo || !studentClass || !dob) {
+            return res.status(400).json({ "error": "All fields required." });
+        }
+        const result = await Result.findOne({ roll_no: rollNo, admission_no: admissionNo, class: studentClass, dob: dob });
+        res.json({ "message": result ? "success" : "not found", "data": result || null });
     } catch (err) {
         res.status(500).json({ "error": err.message });
     }
 });
 
-// Add Result (Admin)
-// Add Result (Admin)
+// Add Result
 app.post('/api/results', async (req, res) => {
-    console.log("Received Result Upload Request:", req.body); // DEBUG LOG
     try {
-        const { student_name, roll_no, class: studentClass, marks } = req.body;
-
-        const result = new Result({
-            student_name,
-            roll_no,
-            class: studentClass,
-            marks
-        });
-
-        if (!marks && (req.body.math || req.body.science || req.body.english)) {
-            console.log("Constructing marks from individual fields..."); // DEBUG LOG
-            result.marks = {
-                Math: req.body.math,
-                Science: req.body.science,
-                English: req.body.english
-            };
-        } else {
-            result.marks = marks;
-        }
-
-        console.log("Saving result object:", result); // DEBUG LOG
+        const { student_name, roll_no, admission_no, dob, class: studentClass, marks } = req.body;
+        const result = new Result({ student_name, roll_no, admission_no, dob, class: studentClass, marks });
         await result.save();
-        console.log("Result saved successfully via Mongoose!"); // DEBUG LOG
         res.json({ "message": "success", "id": result._id });
     } catch (err) {
-        console.error("Error saving result:", err); // DEBUG LOG
         res.status(400).json({ "error": err.message });
     }
 });
 
-
-// Simple Admin Login (Hardcoded for demo, but server-side)
+// Admin Login
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
-
-    // In a real app, check against a Users table with hashed passwords
-    if (username === 'admin' && password === 'password123') {
+    if (username === 'admin' && password === '@abcd1234') {
         res.json({ "message": "success", "token": "fake-jwt-token-123" });
     } else {
         res.status(401).json({ "message": "Invalid credentials" });
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// Start Server locally (Conditional)
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+}
+
+// Export for Vercel
+module.exports = app;
+
+

@@ -1,4 +1,6 @@
-export function Gallery() {
+import React from 'react';
+
+const Gallery = () => {
     const images = [
         { src: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80', caption: 'Graduation Day' },
         { src: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&q=80', caption: 'Science Lab' },
@@ -10,19 +12,21 @@ export function Gallery() {
         { src: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=800&q=80', caption: 'Football Match' }
     ];
 
-    return `
-    <div class="container page-content">
-      <h1>Campus Gallery</h1>
-      <p style="margin-bottom: 2rem;">A glimpse into the vibrant life at Excellence Academy.</p>
-      
-      <div class="gallery-grid">
-        ${images.map(img => `
-          <div class="gallery-item">
-            <img src="${img.src}" alt="${img.caption}" loading="lazy">
-            <div class="gallery-caption">${img.caption}</div>
-          </div>
-        `).join('')}
-      </div>
-    </div>
-  `;
-}
+    return (
+        <div className="container page-content">
+            <h1>Campus Gallery</h1>
+            <p>A glimpse into life at D.R.P. CONVENT PUBLIC SCHOOL.</p>
+
+            <div className="gallery-grid">
+                {images.map((img, index) => (
+                    <div className="gallery-item" key={index}>
+                        <img src={img.src} alt={img.caption} loading="lazy" />
+                        <div className="gallery-caption">{img.caption}</div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default Gallery;
