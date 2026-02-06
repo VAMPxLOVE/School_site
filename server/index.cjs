@@ -41,6 +41,12 @@ const upload = multer({ storage: storage });
 connectDB();
 
 // API Routes
+
+// Health Check
+app.get('/api/health', (req, res) => {
+    res.json({ status: "ok", message: "Server is running 🚀" });
+});
+
 // GET all notices
 app.get('/api/notices', async (req, res) => {
     try {
