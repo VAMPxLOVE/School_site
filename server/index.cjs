@@ -198,11 +198,12 @@ app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
 
     // In a real app, check against a Users table with hashed passwords
-    if (username === 'admin' && password === '@abcd1234') {
-        res.json({ "message": "success", "token": "fake-jwt-token-123" });
-    } else {
-        res.status(401).json({ "message": "Invalid credentials" });
-    }
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
 });
+
+// Export for Vercel Serverless
+module.exports = app;
 
 

@@ -5,8 +5,28 @@ Since your application uses **React (Frontend)**, **Node.js/Express (Backend)**,
 Here is the recommended "Best Practice" free/cheap stack:
 
 1.  **Database**: MongoDB Atlas (Cloud)
-2.  **Backend**: Render or Railway
-3.  **Frontend**: Vercel or Netlify
+2.  **Hosting**: **Vercel** (Easiest - Hosts BOTH Frontend & Backend) or **Railway/Netlify**.
+
+---
+
+## Option A: Deploy EVERYTHING on Vercel (Recommended)
+You can host both your React Frontend and Node Backend on Vercel for free.
+
+1.  Push code to **GitHub**.
+2.  Go to [Vercel.com](https://vercel.com) -> **Add New Project**.
+3.  Import your repository.
+4.  **Framework Preset**: Vite.
+5.  **Root Directory**: `./` (Default).
+6.  **Environment Variables**:
+    *   `MONGO_URI`: Your MongoDB connection string.
+    *   `VITE_API_URL`: `/` (Leave empty or set to `/` since API is on same domain).
+7.  Click **Deploy**.
+
+Vercel will detect `vercel.json` and serve your API at `/api/...` and your frontend at `/`.
+
+---
+
+## Option B: Separate Hosting (Railway + Netlify)
 
 ---
 
