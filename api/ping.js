@@ -1,3 +1,9 @@
 module.exports = (req, res) => {
-    res.status(200).send("API Layer is alive and running directly!");
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({
+        status: "ok",
+        message: "Zero-dependency ping is working",
+        now: new Date().toISOString()
+    }));
 };
