@@ -17,17 +17,24 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Ensure Upload Directory Exists on Startup
-const uploadDir = path.join(__dirname, '../public/uploads/notices');
-if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true });
-    console.log(`Created upload directory: ${uploadDir}`);
+// Configure Multer for Vercel (use /tmp for serverless runtime)
+const isVercel = process.env.VERCEL === '1';
+const baseUploadDir = isVercel ? '/tmp' : path.join(__dirname, '../public');
+const uploadDir = path.join(baseUploadDir, 'uploads/notices');
+
+// Ensure Upload Directory Exists (safely)
+try {
+    if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+        console.log(`Created upload directory: ${uploadDir}`);
+    }
+} catch (err) {
+    console.warn(`Could not create upload directory ${uploadDir}: ${err.message}`);
 }
 
-// Configure Multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, uploadDir); // Use the pre-calculated path
+        cb(null, uploadDir);
     },
     filename: (req, file, cb) => {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
