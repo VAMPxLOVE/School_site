@@ -9,15 +9,21 @@ const Notices = () => {
     useEffect(() => {
         const fetchNotices = async () => {
             try {
-                console.log(`Fetching notices from: ${API_BASE_URL}/api/notices`);
+                console.log(`🔌 Fetching notices from: ${API_BASE_URL}/api/notices`);
                 const res = await fetch(`${API_BASE_URL}/api/notices`);
                 const data = await res.json();
-                if (data.data) {
+
+                if (data && data.data && Array.isArray(data.data)) {
                     setNotices(data.data);
+                } else {
+                    console.warn('⚠️ Received unexpected notice data format:', data);
+                    setNotices([]); // Fallback to empty list
                 }
             } catch (err) {
-                console.error('Error fetching notices:', err);
+                console.error('❌ Error fetching notices:', err);
+                setNotices([]);
             } finally {
+                // Ensure loading is ALWAYS stopped
                 setLoading(false);
             }
         };
