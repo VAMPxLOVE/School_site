@@ -8,6 +8,7 @@
     "server": "node server/index.js",
     "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
     "build": "vite build",
+    "postbuild": "dir dist /s",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -21,8 +22,11 @@
     "concurrently": "^9.2.1",
     "cors": "^2.8.6",
     "express": "^5.2.1",
-    "mongoose": "^8.22.0",
-    "multer": "^2.0.2"
+    "mongoose": "^8.10.0",
+    "multer": "^2.0.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.0"
   },
   "engines": {
     "node": "20.x"
