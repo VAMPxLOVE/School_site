@@ -10,7 +10,7 @@ if (!cached) {
 const connectDB = async () => {
     // Atlas Connection String - Use Env Var in production
     // Support both MONGO_URI (Custom) and MONGODB_URI (Vercel Integration)
-    const MONGO_URI = process.env.MONGO_URI || process.env.MONGODB_URI || "mongodb+srv://lovekumar2801_db_user:school123@website.x3nmpyp.mongodb.net/school?appName=WebSite";
+    const MONGO_URI = process.env.MONGO_URI || process.env.MONGODB_URI || "mongodb+srv://lovekumar2801_db_user:school123@website.x3nmpyp.mongodb.net/WebSite?appName=WebSite";
 
     if (cached.conn) {
         console.log("Using cached MongoDB connection");
