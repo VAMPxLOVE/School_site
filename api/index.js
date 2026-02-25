@@ -5,8 +5,7 @@ try {
     module.exports = (req, res) => {
         res.status(500).json({
             error: "Failed to load backend",
-            message: err.message,
-            stack: err.stack
+            message: err.message
         });
     };
 }
