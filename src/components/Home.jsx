@@ -6,21 +6,21 @@ const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
         {
-            image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80',
+            image: 'https://lh3.googleusercontent.com/pw/AP1GczP6O5GJnS7-HqudEpjpVclkBmUf0Q8QThtbqgsmrInk8NIm6Hn_sMiicn1ytYbmKNIXZQsORv9JmrNReVcnq78gPSGotdI8MrC0aYsubqoUn3UhCrcY=s0',
             title: 'Welcome to D.R.P. CONVENT PUBLIC SCHOOL',
             text: 'Empowering students to achieve greatness.',
             link: '/admissions',
             btnText: 'Apply Now'
         },
         {
-            image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80',
+            image: 'https://lh3.googleusercontent.com/pw/AP1GczPTMggxm-MwGSRxWKIgIN4UGAQ_61GDGNp-FWRbKIDTjmjTQqkmLpNSPxYJS_wOpDda1ZZ0lginn6j2l623-aX17Q3xW4_Nku6hIWLhAIcUbLrt_Eei=s0',
             title: 'World-Class Education',
             text: 'Nurturing curiosity and critical thinking.',
             link: '/academics',
             btnText: 'Explore Academics'
         },
         {
-            image: 'https://images.unsplash.com/photo-1427504743050-dad446326749?w=1600&q=80',
+            image: 'https://lh3.googleusercontent.com/pw/AP1GczP76ZTZoyiQmOBk-5Wba1LhMikVo2LxWDCq2_pXeAubgqT_-JOIOuLaRTlDbtLy3R1BxnhBmLFoOYSGsxQzjXKZN3IvdYubYqMws4sGORoY8LSNtSt0=s0',
             title: 'Holistic Development',
             text: 'Sports, Arts, and Leadership programs.',
             link: '/gallery',
