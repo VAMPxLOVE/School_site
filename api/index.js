@@ -1,12 +1,7 @@
-try {
-    const app = require('../server/index');
-    module.exports = app;
-} catch (err) {
-    module.exports = (req, res) => {
-        res.status(500).json({
-            error: "Failed to load backend",
-            message: err.message,
-            stack: err.stack
-        });
-    };
-}
+module.exports = (req, res) => {
+    res.status(200).json({
+        status: "ok",
+        message: "Minimal API entry is alive",
+        env: process.version
+    });
+};
