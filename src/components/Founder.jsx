@@ -29,7 +29,7 @@ const Founder = () => {
                 <div className="founder-content" style={{ marginTop: '4rem' }}>
                     <h2>Ex-Chairman's Ideology</h2>
                     <div className="founder-card glass">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Ex-Chairman" className="founder-img" />
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczP2Tucaw9l_tJzGvq-SzmbwnV2MZPszYoATOFSKA9NvbW_zMK-5ifpVptsIG8w2VHftArbog5xBVryTsdxazigVJ-mdOrdNAA5n7oZRMLTa9Z232xGbv9RfGEL7qu4CjcPCnu7EUfJZplkeZ-0PfCjWvA=s0" alt="Ex-Chairman" className="founder-img" />
                         <div>
                             <h3>Late Sh. Yatender Sharma</h3>
                             <p className="founder-role">Ex-Chairman</p>
