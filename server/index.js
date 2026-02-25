@@ -57,6 +57,7 @@ app.get('/api/health', (req, res) => {
 // GET all notices
 app.get('/api/notices', async (req, res) => {
     try {
+        await connectDB();
         const notices = await Notice.find().sort({ date: -1 });
         res.json({ "message": "success", "data": notices });
     } catch (err) {
@@ -66,8 +67,8 @@ app.get('/api/notices', async (req, res) => {
 
 // POST new notice
 app.post('/api/notices', upload.single('pdf'), async (req, res) => {
-    // ... (keep existing logic, abbreviated for safety, assuming file content is same) ...
     try {
+        await connectDB();
         if (!req.body || Object.keys(req.body).length === 0) {
             return res.status(400).json({ "error": "Request body is empty." });
         }
@@ -86,6 +87,7 @@ app.post('/api/notices', upload.single('pdf'), async (req, res) => {
 // Contact Form Endpoint
 app.post('/api/contact', async (req, res) => {
     try {
+        await connectDB();
         const { name, email, subject, message } = req.body;
         const date = new Date().toISOString().split('T')[0];
         const msg = new Message({ name, email, subject, message, date });
@@ -99,6 +101,7 @@ app.post('/api/contact', async (req, res) => {
 // Fetch Messages
 app.get('/api/messages', async (req, res) => {
     try {
+        await connectDB();
         const messages = await Message.find().sort({ _id: -1 });
         res.json({ "message": "success", "data": messages });
     } catch (err) {
@@ -109,6 +112,7 @@ app.get('/api/messages', async (req, res) => {
 // Secure Fetch Result
 app.get('/api/search_result', async (req, res) => {
     try {
+        await connectDB();
         const { rollNo, admissionNo, class: studentClass, dob } = req.query;
         if (!rollNo || !admissionNo || !studentClass || !dob) {
             return res.status(400).json({ "error": "All fields required." });
@@ -123,6 +127,7 @@ app.get('/api/search_result', async (req, res) => {
 // Add Result
 app.post('/api/results', async (req, res) => {
     try {
+        await connectDB();
         const { student_name, roll_no, admission_no, dob, class: studentClass, marks } = req.body;
         const result = new Result({ student_name, roll_no, admission_no, dob, class: studentClass, marks });
         await result.save();
