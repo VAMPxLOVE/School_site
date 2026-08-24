@@ -5,6 +5,7 @@
 export const galleryCategories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
     { id: 'campus', label: 'Campus & Facilities', icon: '🏫' },
+    { id: 'samarpan', label: 'Samarpan & Janmashtami', icon: '🪔' },
     { id: 'results', label: 'Annual Result Day', icon: '🏆' },
     { id: 'council', label: 'Student Council', icon: '🗳️' },
     { id: 'cooking', label: 'Cooking Activity', icon: '🍳' },
@@ -332,5 +333,37 @@ export const galleryImages = [
         category: 'results',
         title: 'Prize & Merit Certificate Distribution Ceremony',
         src: '/assets/gallery/results/annual_result_award_ceremony.jpg'
+    },
+
+    // --- SAMARPAN & JANMASHTAMI ---
+    {
+        id: 50,
+        category: 'samarpan',
+        title: 'Samarpan - Classroom Community Sharing Meal',
+        src: '/assets/gallery/celebrations/samarpan_community_meal_1.jpg'
+    },
+    {
+        id: 51,
+        category: 'samarpan',
+        title: 'Samarpan - Students Dining Together in Joy',
+        src: '/assets/gallery/celebrations/samarpan_classroom_feast.jpg'
+    },
+    {
+        id: 52,
+        category: 'samarpan',
+        title: 'Samarpan - Community Feast Along Corridors',
+        src: '/assets/gallery/celebrations/samarpan_student_sharing.jpg'
+    },
+    {
+        id: 53,
+        category: 'samarpan',
+        title: 'Janmashtami - Govardhan Leela Cave Diorama',
+        src: '/assets/gallery/celebrations/janmashtami_govardhan_diorama.jpg'
+    },
+    {
+        id: 54,
+        category: 'samarpan',
+        title: 'Janmashtami - Handcrafted Krishna Makhan Pots',
+        src: '/assets/gallery/celebrations/janmashtami_krishna_matki_decor.jpg'
     }
 ];
