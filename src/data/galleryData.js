@@ -32,43 +32,70 @@ export const galleryImages = [
     {
         id: 1,
         category: 'campus',
-        title: 'Main School Campus Building',
-        caption: 'Front facade of D.R.P. Convent Public School (Recognized & Affiliated to C.B.S.E.).',
-        src: '/assets/gallery/campus/school_building.jpg',
+        title: 'Main School Campus & Courtyard',
+        caption: 'Spacious school campus building and landscaped courtyard at D.R.P. Convent Public School.',
+        src: '/assets/gallery/campus/school_campus_front.jpg',
         date: '2026',
-        tags: ['campus', 'building', 'main-block', 'cbse']
+        tags: ['campus', 'building', 'courtyard', 'cbse']
     },
     {
         id: 2,
         category: 'campus',
-        title: 'Central Resource Library',
-        caption: 'A serene reading environment housing over 15,000 reference volumes, journals, and digital periodicals.',
-        src: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1200&q=80',
+        title: 'Smart Interactive Digital Classroom',
+        caption: 'Students engaged in interactive digital learning with modern audiovisual smart boards and dedicated educators.',
+        src: '/assets/gallery/campus/smart_digital_classroom.jpg',
         date: '2026',
-        tags: ['library', 'reading', 'books', 'campus']
+        tags: ['smart-class', 'digital', 'classroom', 'campus']
     },
     {
         id: 3,
         category: 'campus',
-        title: 'Smart Interactive Classroom',
-        caption: 'Equipped with digital touchscreens, audiovisual aids, and high-speed e-learning resources.',
-        src: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80',
+        title: 'Science & Chemistry Laboratory',
+        caption: 'Hands-on practical experiments and science demonstrations under teacher mentorship in our well-equipped laboratory.',
+        src: '/assets/gallery/campus/science_lab_practical.jpg',
         date: '2026',
-        tags: ['smart-class', 'digital', 'technology']
+        tags: ['science', 'lab', 'chemistry', 'experiments', 'campus']
     },
     {
         id: 4,
         category: 'campus',
-        title: 'Auditorium & Multipurpose Hall',
-        caption: 'State-of-the-art acoustic auditorium accommodating 800+ attendees for seminars, assemblies, and conferences.',
-        src: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1200&q=80',
-        date: '2025',
-        tags: ['auditorium', 'hall', 'campus']
+        title: 'Music & Instrumental Studio Session',
+        caption: 'Students learning synthesizer keyboard and acoustic guitar during co-curricular music training.',
+        src: '/assets/gallery/campus/music_instrument_session.jpg',
+        date: '2026',
+        tags: ['music', 'guitar', 'keyboard', 'arts', 'campus']
+    },
+    {
+        id: 5,
+        category: 'campus',
+        title: 'Keyboard & Melody Practice',
+        caption: 'Guided electronic keyboard lessons fostering musical rhythm and talent.',
+        src: '/assets/gallery/campus/music_keyboard_class.jpg',
+        date: '2026',
+        tags: ['music', 'keyboard', 'studio', 'campus']
+    },
+    {
+        id: 6,
+        category: 'campus',
+        title: 'Acoustic Guitar Workshop',
+        caption: 'Interactive guitar training and music appreciation with our dedicated faculty.',
+        src: '/assets/gallery/campus/music_guitar_class.jpg',
+        date: '2026',
+        tags: ['music', 'guitar', 'campus', 'workshop']
+    },
+    {
+        id: 7,
+        category: 'campus',
+        title: 'Main Entrance & School Facade',
+        caption: 'Front facade of D.R.P. Convent Public School (Recognized & Affiliated to C.B.S.E.).',
+        src: '/assets/gallery/campus/school_building.jpg',
+        date: '2026',
+        tags: ['campus', 'building', 'entrance', 'cbse']
     },
 
     // --- SPORTS & ATHLETICS ---
     {
-        id: 5,
+        id: 8,
         category: 'sports',
         title: 'Annual Sports Meet - Sprint Finals',
         caption: 'Students competing in the 100m inter-house track sprint championship with spirited cheer.',
@@ -77,7 +104,7 @@ export const galleryImages = [
         tags: ['sports', 'athletics', 'race', 'sprint']
     },
     {
-        id: 6,
+        id: 9,
         category: 'sports',
         title: 'Inter-School Football Championship',
         caption: 'Our senior football team in action during the regional championship tournament.',
@@ -86,7 +113,7 @@ export const galleryImages = [
         tags: ['football', 'sports', 'team', 'tournament']
     },
     {
-        id: 7,
+        id: 10,
         category: 'sports',
         title: 'Basketball Court Training',
         caption: 'Dedicated coaching sessions on our synthetic outdoor basketball court.',
@@ -95,7 +122,7 @@ export const galleryImages = [
         tags: ['basketball', 'sports', 'fitness']
     },
     {
-        id: 8,
+        id: 11,
         category: 'sports',
         title: 'International Yoga Day Gathering',
         caption: 'Students and faculty practicing holistic wellness, pranayama, and yoga asanas.',
@@ -106,7 +133,7 @@ export const galleryImages = [
 
     // --- ANNUAL DAY & CULTURAL EVENTS ---
     {
-        id: 9,
+        id: 12,
         category: 'events',
         title: 'Annual Cultural Fest - Classical Dance',
         caption: 'Enthralling classical Bharatanatyam and folk performances during the Annual Day gala.',
@@ -115,7 +142,7 @@ export const galleryImages = [
         tags: ['annual-day', 'dance', 'culture', 'celebration']
     },
     {
-        id: 10,
+        id: 13,
         category: 'events',
         title: 'Theatrical Stage Play & Drama',
         caption: 'Students staging an adaptation of historic literature during the literary drama festival.',
@@ -124,7 +151,7 @@ export const galleryImages = [
         tags: ['drama', 'theatre', 'stage', 'acting']
     },
     {
-        id: 11,
+        id: 14,
         category: 'events',
         title: 'Annual Prize Distribution Ceremony',
         caption: 'Merit scholars and sports achievers receiving trophies and certificates from honored guests.',
@@ -135,7 +162,7 @@ export const galleryImages = [
 
     // --- SCIENCE & LABS ---
     {
-        id: 12,
+        id: 15,
         category: 'science',
         title: 'Senior Chemistry Laboratory Experiments',
         caption: 'Hands-on titration and chemical analysis under guided supervision in modern wet labs.',
@@ -144,7 +171,7 @@ export const galleryImages = [
         tags: ['chemistry', 'lab', 'science', 'experiment']
     },
     {
-        id: 13,
+        id: 16,
         category: 'science',
         title: 'STEM & Robotics Exhibition',
         caption: 'Student-built autonomous rovers and IoT sensors displayed at the Annual Science Fair.',
@@ -153,7 +180,7 @@ export const galleryImages = [
         tags: ['robotics', 'stem', 'innovation', 'technology']
     },
     {
-        id: 14,
+        id: 17,
         category: 'science',
         title: 'Advanced Computer & AI Lab',
         caption: 'High-performance workstations dedicated to coding, Python programming, and digital design.',
@@ -164,7 +191,7 @@ export const galleryImages = [
 
     // --- CELEBRATIONS & FESTIVALS ---
     {
-        id: 15,
+        id: 18,
         category: 'celebrations',
         title: 'Independence Day Flag Hoisting',
         caption: 'Grand tricolor hoisting ceremony accompanied by national anthem and NCC cadet parade.',
@@ -173,7 +200,7 @@ export const galleryImages = [
         tags: ['independence-day', 'patriotic', 'flag', 'ncc']
     },
     {
-        id: 16,
+        id: 19,
         category: 'celebrations',
         title: 'Teachers\' Day Tribute & Special Assembly',
         caption: 'Students presenting personalized mementos and cultural performances to honor our beloved teachers.',
@@ -182,7 +209,7 @@ export const galleryImages = [
         tags: ['teachers-day', 'celebration', 'gratitude']
     },
     {
-        id: 17,
+        id: 20,
         category: 'celebrations',
         title: 'Republic Day Parade & Drill',
         caption: 'Disciplined march past and synchronized drills by the school student council and houses.',
@@ -193,7 +220,7 @@ export const galleryImages = [
 
     // --- ACADEMIC LIFE ---
     {
-        id: 18,
+        id: 21,
         category: 'academics',
         title: 'Collaborative Group Study & Problem Solving',
         caption: 'Students engaging in active peer discussions and brainstorming for group projects.',
@@ -202,7 +229,7 @@ export const galleryImages = [
         tags: ['academics', 'study', 'collaboration', 'students']
     },
     {
-        id: 19,
+        id: 22,
         category: 'academics',
         title: 'Fine Arts & Painting Studio',
         caption: 'Nurturing creativity and aesthetic expression through watercolors, sketchcraft, and sculpture.',
@@ -211,7 +238,7 @@ export const galleryImages = [
         tags: ['art', 'painting', 'creativity', 'studio']
     },
     {
-        id: 20,
+        id: 23,
         category: 'academics',
         title: 'Interactive Maths & Puzzle Workshop',
         caption: 'Practical conceptual learning using geometric models, abacus, and logic puzzles.',
