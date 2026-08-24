@@ -5,6 +5,7 @@
 export const galleryCategories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
     { id: 'campus', label: 'Campus & Facilities', icon: '🏫' },
+    { id: 'halloween', label: 'Halloween Day', icon: '🎃' },
     { id: 'grandparents', label: 'Grandparents Day', icon: '👵👴' },
     { id: 'independence', label: 'Independence Day', icon: '🇮🇳' },
     { id: 'samarpan', label: 'Samarpan & Janmashtami', icon: '🪔' },
@@ -431,5 +432,37 @@ export const galleryImages = [
         category: 'grandparents',
         title: 'Students Presenting Love to Grandparents',
         src: '/assets/gallery/grandparents/grandparents_day_handmade_cards.jpg'
+    },
+
+    // --- HALLOWEEN DAY CELEBRATIONS ---
+    {
+        id: 65,
+        category: 'halloween',
+        title: 'Halloween Costume Troupe on Lawn',
+        src: '/assets/gallery/halloween/halloween_garden_troupe.jpg'
+    },
+    {
+        id: 66,
+        category: 'halloween',
+        title: 'Spooky Prank at Reception Desk',
+        src: '/assets/gallery/halloween/halloween_reception_spook.jpg'
+    },
+    {
+        id: 67,
+        category: 'halloween',
+        title: 'Eerie Mystery Peeking from Foliage',
+        src: '/assets/gallery/halloween/halloween_foliage_peek.jpg'
+    },
+    {
+        id: 68,
+        category: 'halloween',
+        title: 'Halloween Ghoul Squad Office Pose',
+        src: '/assets/gallery/halloween/halloween_reception_squad.jpg'
+    },
+    {
+        id: 69,
+        category: 'halloween',
+        title: 'Mystic Witch Costume & Dramatic Art',
+        src: '/assets/gallery/halloween/halloween_witch_costume.jpg'
     }
 ];
