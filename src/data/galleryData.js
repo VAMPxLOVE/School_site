@@ -5,6 +5,7 @@
 export const galleryCategories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
     { id: 'campus', label: 'Campus & Facilities', icon: '🏫' },
+    { id: 'council', label: 'Student Council', icon: '🗳️' },
     { id: 'cooking', label: 'Cooking Activity', icon: '🍳' },
     { id: 'orientation', label: 'Parents Orientation', icon: '👨‍👩‍👧' },
     { id: 'health', label: 'Health Awareness', icon: '🩺' },
@@ -260,5 +261,37 @@ export const galleryImages = [
         category: 'cooking',
         title: 'Class Vth Activity Menu Blackboard',
         src: '/assets/gallery/cooking/cooking_activity_board.jpg'
+    },
+
+    // --- STUDENT COUNCIL ELECTIONS ---
+    {
+        id: 39,
+        category: 'council',
+        title: 'Elected Student Council & House Prefects',
+        src: '/assets/gallery/council/student_council_assembly.jpg'
+    },
+    {
+        id: 40,
+        category: 'council',
+        title: 'Blue House Prefects with Faculty Mentors',
+        src: '/assets/gallery/council/council_blue_house.jpg'
+    },
+    {
+        id: 41,
+        category: 'council',
+        title: 'Yellow House Prefects with Faculty Mentors',
+        src: '/assets/gallery/council/council_yellow_house.jpg'
+    },
+    {
+        id: 42,
+        category: 'council',
+        title: 'Green House Prefects with Faculty Mentors',
+        src: '/assets/gallery/council/council_green_house.jpg'
+    },
+    {
+        id: 43,
+        category: 'council',
+        title: 'White House Prefects with Faculty Mentors',
+        src: '/assets/gallery/council/council_white_house.jpg'
     }
 ];
