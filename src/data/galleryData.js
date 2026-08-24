@@ -21,6 +21,7 @@ export const galleryCategories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
     { id: 'campus', label: 'Campus & Facilities', icon: '🏫' },
     { id: 'health', label: 'Health Awareness', icon: '🩺' },
+    { id: 'orientation', label: 'Parents Orientation', icon: '👨‍👩‍👧' },
     { id: 'sports', label: 'Sports & Athletics', icon: '⚽' },
     { id: 'events', label: 'Annual Day & Cultural', icon: '🎭' },
     { id: 'science', label: 'Science & Labs', icon: '🔬' },
@@ -293,5 +294,52 @@ export const galleryImages = [
         src: '/assets/gallery/health/pocso_safety_awareness.jpg',
         date: '2026',
         tags: ['pocso', 'child-safety', 'health', 'awareness', 'legal-rights']
+    },
+
+    // --- PARENTS ORIENTATION ---
+    {
+        id: 29,
+        category: 'orientation',
+        title: 'Parents Orientation 2026-27 Inaugural Session',
+        caption: 'Welcoming parents and students to the annual orientation programme introducing school values, leadership, and policies.',
+        src: '/assets/gallery/orientation/orientation_welcome_session.jpg',
+        date: '2026',
+        tags: ['orientation', 'parents', 'welcome', 'academic-session']
+    },
+    {
+        id: 30,
+        category: 'orientation',
+        title: 'School Vision, Mission & Goals Presentation',
+        caption: 'Detailed briefing on D.R.P. Convent Public School’s pedagogical vision and educational milestones.',
+        src: '/assets/gallery/orientation/orientation_vision_mission.jpg',
+        date: '2026',
+        tags: ['orientation', 'vision', 'mission', 'pedagogy']
+    },
+    {
+        id: 31,
+        category: 'orientation',
+        title: 'Academic Assessment Pattern & Grading Framework',
+        caption: 'Guiding parents through term examinations, continuous evaluations, and holistic assessment criteria.',
+        src: '/assets/gallery/orientation/orientation_assessment_pattern.jpg',
+        date: '2026',
+        tags: ['orientation', 'academics', 'assessment', 'exams']
+    },
+    {
+        id: 32,
+        category: 'orientation',
+        title: 'Curriculum & Syllabus Booklet Overview',
+        caption: 'Comprehensive walkthrough of class syllabus, learning outcomes, and subject guidelines for parents.',
+        src: '/assets/gallery/orientation/orientation_syllabus_presentation.jpg',
+        date: '2026',
+        tags: ['orientation', 'syllabus', 'curriculum', 'academics']
+    },
+    {
+        id: 33,
+        category: 'orientation',
+        title: 'Leadership Keynote Address to Parents',
+        caption: 'Faculty leadership and coordinators addressing parent queries and sharing co-curricular roadmaps.',
+        src: '/assets/gallery/orientation/orientation_keynote_address.jpg',
+        date: '2026',
+        tags: ['orientation', 'keynote', 'leadership', 'faculty']
     }
 ];
