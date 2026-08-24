@@ -5,6 +5,7 @@
 export const galleryCategories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
     { id: 'campus', label: 'Campus & Facilities', icon: '🏫' },
+    { id: 'independence', label: 'Independence Day', icon: '🇮🇳' },
     { id: 'samarpan', label: 'Samarpan & Janmashtami', icon: '🪔' },
     { id: 'results', label: 'Annual Result Day', icon: '🏆' },
     { id: 'council', label: 'Student Council', icon: '🗳️' },
@@ -365,5 +366,37 @@ export const galleryImages = [
         category: 'samarpan',
         title: 'Janmashtami - Handcrafted Krishna Makhan Pots',
         src: '/assets/gallery/celebrations/janmashtami_krishna_matki_decor.jpg'
+    },
+
+    // --- INDEPENDENCE DAY CELEBRATIONS ---
+    {
+        id: 55,
+        category: 'independence',
+        title: 'Independence Day 15 August Art Display',
+        src: '/assets/gallery/independence/independence_vayu_house_art.jpg'
+    },
+    {
+        id: 56,
+        category: 'independence',
+        title: 'Faculty Keynote on Patriotic Values',
+        src: '/assets/gallery/independence/independence_teacher_speech.jpg'
+    },
+    {
+        id: 57,
+        category: 'independence',
+        title: 'Unity in Diversity Tricolour Rangoli Art',
+        src: '/assets/gallery/independence/independence_unity_rangoli.jpg'
+    },
+    {
+        id: 58,
+        category: 'independence',
+        title: 'Independence Day School Assembly Address',
+        src: '/assets/gallery/independence/independence_assembly_address.jpg'
+    },
+    {
+        id: 59,
+        category: 'independence',
+        title: 'Happy Independence Day Rangoli Creation',
+        src: '/assets/gallery/independence/independence_tricolour_rangoli.jpg'
     }
 ];
