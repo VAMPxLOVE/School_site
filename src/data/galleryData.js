@@ -5,10 +5,11 @@
 export const galleryCategories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
     { id: 'campus', label: 'Campus & Facilities', icon: '🏫' },
+    { id: 'diwali', label: 'Diwali Celebrations', icon: '🪔' },
     { id: 'halloween', label: 'Halloween Day', icon: '🎃' },
     { id: 'grandparents', label: 'Grandparents Day', icon: '👵👴' },
     { id: 'independence', label: 'Independence Day', icon: '🇮🇳' },
-    { id: 'samarpan', label: 'Samarpan & Janmashtami', icon: '🪔' },
+    { id: 'samarpan', label: 'Samarpan & Janmashtami', icon: '✨' },
     { id: 'results', label: 'Annual Result Day', icon: '🏆' },
     { id: 'council', label: 'Student Council', icon: '🗳️' },
     { id: 'cooking', label: 'Cooking Activity', icon: '🍳' },
@@ -464,5 +465,37 @@ export const galleryImages = [
         category: 'halloween',
         title: 'Mystic Witch Costume & Dramatic Art',
         src: '/assets/gallery/halloween/halloween_witch_costume.jpg'
+    },
+
+    // --- DIWALI CELEBRATIONS ---
+    {
+        id: 70,
+        category: 'diwali',
+        title: 'Diwali Handcrafted Diya Painting Activity',
+        src: '/assets/gallery/diwali/diwali_diya_painting_student.jpg'
+    },
+    {
+        id: 71,
+        category: 'diwali',
+        title: 'Jal House Shubh Deepawali & Peacock Rangoli',
+        src: '/assets/gallery/diwali/diwali_jal_house_rangoli.jpg'
+    },
+    {
+        id: 72,
+        category: 'diwali',
+        title: 'Clay Diya Colouring & Craft Workshop',
+        src: '/assets/gallery/diwali/diwali_classroom_diya_craft.jpg'
+    },
+    {
+        id: 73,
+        category: 'diwali',
+        title: 'Goddess Lakshmi Rangoli by School Team',
+        src: '/assets/gallery/diwali/diwali_lakshmi_rangoli_team.jpg'
+    },
+    {
+        id: 74,
+        category: 'diwali',
+        title: 'Agni House Shubh Labh Floral Rangoli',
+        src: '/assets/gallery/diwali/diwali_agni_house_rangoli.jpg'
     }
 ];
