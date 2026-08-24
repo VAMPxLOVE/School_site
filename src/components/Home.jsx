@@ -37,6 +37,12 @@ const Home = () => {
     };
 
     useEffect(() => {
+        // Preload upcoming slides in background
+        slides.forEach(slide => {
+            const img = new Image();
+            img.src = slide.image;
+        });
+
         const interval = setInterval(nextSlide, 5000);
         return () => clearInterval(interval);
     }, []);
