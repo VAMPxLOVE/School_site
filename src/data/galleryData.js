@@ -126,47 +126,53 @@ export const galleryImages = [
         src: '/assets/gallery/health/pocso_safety_awareness.jpg'
     },
 
-    // --- SPORTS & ATHLETICS ---
+    // --- SPORTS & ATHLETICS (INTER-HOUSE COMPETITION) ---
     {
         id: 18,
         category: 'sports',
-        title: 'Annual Sports Meet - Sprint Finals',
-        src: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&q=80'
+        title: 'Inter-House Badminton Tournament in Courtyard',
+        src: '/assets/gallery/sports/sports_interhouse_badminton.jpg'
     },
     {
         id: 19,
         category: 'sports',
-        title: 'Football Championship',
-        src: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200&q=80'
+        title: 'Carrom Championship - Boys Division',
+        src: '/assets/gallery/sports/sports_carrom_boys.jpg'
     },
     {
         id: 20,
         category: 'sports',
-        title: 'Basketball Practice',
-        src: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1200&q=80'
+        title: 'Carrom Championship - Girls Division',
+        src: '/assets/gallery/sports/sports_carrom_girls.jpg'
     },
     {
         id: 21,
         category: 'sports',
-        title: 'International Yoga Day',
-        src: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80'
+        title: 'Inter-House Chess Strategic Championship',
+        src: '/assets/gallery/sports/sports_chess_championship.jpg'
+    },
+    {
+        id: 22,
+        category: 'sports',
+        title: 'Inter-House Sports & Quiz Delegation Gathering',
+        src: '/assets/gallery/sports/sports_interhouse_team_assembly.jpg'
     },
 
     // --- EVENTS & CULTURAL ---
     {
-        id: 22,
+        id: 23,
         category: 'events',
         title: 'Annual Cultural Fest - Dance',
         src: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&q=80'
     },
     {
-        id: 23,
+        id: 24,
         category: 'events',
         title: 'Theatrical Stage Drama',
         src: 'https://images.unsplash.com/photo-1469488865564-c2de10f69f96?w=1200&q=80'
     },
     {
-        id: 24,
+        id: 25,
         category: 'events',
         title: 'Annual Prize Distribution',
         src: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80'
@@ -174,19 +180,19 @@ export const galleryImages = [
 
     // --- SCIENCE & LABS ---
     {
-        id: 25,
+        id: 26,
         category: 'science',
         title: 'Senior Chemistry Lab Experiments',
         src: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&q=80'
     },
     {
-        id: 26,
+        id: 27,
         category: 'science',
         title: 'STEM & Robotics Exhibition',
         src: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80'
     },
     {
-        id: 27,
+        id: 28,
         category: 'science',
         title: 'Computer & IT Lab',
         src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80'
@@ -194,19 +200,19 @@ export const galleryImages = [
 
     // --- CELEBRATIONS ---
     {
-        id: 28,
+        id: 29,
         category: 'celebrations',
         title: 'Independence Day Flag Hoisting',
         src: 'https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=1200&q=80'
     },
     {
-        id: 29,
+        id: 30,
         category: 'celebrations',
         title: 'Teachers\' Day Celebrations',
         src: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&q=80'
     },
     {
-        id: 30,
+        id: 31,
         category: 'celebrations',
         title: 'Republic Day Parade & Drill',
         src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1200&q=80'
@@ -214,19 +220,19 @@ export const galleryImages = [
 
     // --- ACADEMIC LIFE ---
     {
-        id: 31,
+        id: 32,
         category: 'academics',
         title: 'Collaborative Group Study',
         src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80'
     },
     {
-        id: 32,
+        id: 33,
         category: 'academics',
         title: 'Fine Arts & Painting Studio',
         src: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&q=80'
     },
     {
-        id: 33,
+        id: 34,
         category: 'academics',
         title: 'Maths & Puzzle Workshop',
         src: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80'
@@ -234,31 +240,31 @@ export const galleryImages = [
 
     // --- COOKING WITHOUT FIRE ACTIVITY ---
     {
-        id: 34,
+        id: 35,
         category: 'cooking',
         title: 'Little Chefs - Cooking Without Fire Team',
         src: '/assets/gallery/cooking/cooking_without_fire_team.jpg'
     },
     {
-        id: 35,
+        id: 36,
         category: 'cooking',
         title: 'Dahi Golgappe & Refreshing Drinks Platter',
         src: '/assets/gallery/cooking/cooking_golgappa_platter.jpg'
     },
     {
-        id: 36,
+        id: 37,
         category: 'cooking',
         title: 'Club Sandwiches & Red Mocktails',
         src: '/assets/gallery/cooking/cooking_sandwiches_mocktails.jpg'
     },
     {
-        id: 37,
+        id: 38,
         category: 'cooking',
         title: 'Culinary Platter with Special Chutneys',
         src: '/assets/gallery/cooking/cooking_delicious_platters.jpg'
     },
     {
-        id: 38,
+        id: 39,
         category: 'cooking',
         title: 'Class Vth Activity Menu Blackboard',
         src: '/assets/gallery/cooking/cooking_activity_board.jpg'
@@ -266,31 +272,31 @@ export const galleryImages = [
 
     // --- STUDENT COUNCIL ELECTIONS ---
     {
-        id: 39,
+        id: 40,
         category: 'council',
         title: 'Elected Student Council & House Prefects',
         src: '/assets/gallery/council/student_council_assembly.jpg'
     },
     {
-        id: 40,
+        id: 41,
         category: 'council',
         title: 'Blue House Prefects with Faculty Mentors',
         src: '/assets/gallery/council/council_blue_house.jpg'
     },
     {
-        id: 41,
+        id: 42,
         category: 'council',
         title: 'Yellow House Prefects with Faculty Mentors',
         src: '/assets/gallery/council/council_yellow_house.jpg'
     },
     {
-        id: 42,
+        id: 43,
         category: 'council',
         title: 'Green House Prefects with Faculty Mentors',
         src: '/assets/gallery/council/council_green_house.jpg'
     },
     {
-        id: 43,
+        id: 44,
         category: 'council',
         title: 'White House Prefects with Faculty Mentors',
         src: '/assets/gallery/council/council_white_house.jpg'
@@ -298,31 +304,31 @@ export const galleryImages = [
 
     // --- ANNUAL RESULT DAY ---
     {
-        id: 44,
+        id: 45,
         category: 'results',
         title: 'Annual Result Day Merit Trophies Table',
         src: '/assets/gallery/results/annual_result_trophies.jpg'
     },
     {
-        id: 45,
+        id: 46,
         category: 'results',
         title: '1st Rank Topper on Victory Podium',
         src: '/assets/gallery/results/annual_result_podium_topper.jpg'
     },
     {
-        id: 46,
+        id: 47,
         category: 'results',
         title: 'Academic Distinction Group Felicitation',
         src: '/assets/gallery/results/annual_result_merit_group.jpg'
     },
     {
-        id: 47,
+        id: 48,
         category: 'results',
         title: 'Top 3 Position Holders on Podium with Faculty',
         src: '/assets/gallery/results/annual_result_top_rankers.jpg'
     },
     {
-        id: 48,
+        id: 49,
         category: 'results',
         title: 'Prize & Merit Certificate Distribution Ceremony',
         src: '/assets/gallery/results/annual_result_award_ceremony.jpg'
