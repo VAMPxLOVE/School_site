@@ -6,7 +6,7 @@ const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
         {
-            image: 'https://lh3.googleusercontent.com/pw/AP1GczP6O5GJnS7-HqudEpjpVclkBmUf0Q8QThtbqgsmrInk8NIm6Hn_sMiicn1ytYbmKNIXZQsORv9JmrNReVcnq78gPSGotdI8MrC0aYsubqoUn3UhCrcY=s0',
+            image: '/assets/school_building.jpg',
             title: 'Welcome to D.R.P. CONVENT PUBLIC SCHOOL',
             text: 'Empowering students to achieve greatness.',
             link: '/admissions',
@@ -37,12 +37,6 @@ const Home = () => {
     };
 
     useEffect(() => {
-        // Preload upcoming slides in background
-        slides.forEach(slide => {
-            const img = new Image();
-            img.src = slide.image;
-        });
-
         const interval = setInterval(nextSlide, 5000);
         return () => clearInterval(interval);
     }, []);
@@ -105,12 +99,12 @@ const Home = () => {
                 <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.1, backgroundImage: 'url("/assets/pattern.png")' }}></div>
                 <div className="stat-grid">
                     <div className="stat-card">
-                        <div className="stat-number">25+</div>
+                        <div className="stat-number">28+</div>
                         <div className="stat-label">Years of Excellence</div>
                     </div>
                     <div className="stat-card">
                         <div className="stat-number">1200+</div>
-                        <div className="stat-label">Students Enrolled</div>
+                        <div className="stat-label">Alumni's</div>
                     </div>
                     <div className="stat-card">
                         <div className="stat-number">100%</div>

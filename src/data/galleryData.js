@@ -32,11 +32,11 @@ export const galleryImages = [
     {
         id: 1,
         category: 'campus',
-        title: 'Main Administrative & Academic Block',
-        caption: 'Front facade of D.R.P. Convent Public School with landscaped entrance and green lawns.',
-        src: 'https://images.unsplash.com/photo-1562774053-701939374585?w=1200&q=80',
+        title: 'Main School Campus Building',
+        caption: 'Front facade of D.R.P. Convent Public School (Recognized & Affiliated to C.B.S.E.).',
+        src: '/assets/gallery/campus/school_building.jpg',
         date: '2026',
-        tags: ['campus', 'building', 'infrastructure']
+        tags: ['campus', 'building', 'main-block', 'cbse']
     },
     {
         id: 2,
