@@ -5,6 +5,7 @@
 export const galleryCategories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
     { id: 'campus', label: 'Campus & Facilities', icon: '🏫' },
+    { id: 'results', label: 'Annual Result Day', icon: '🏆' },
     { id: 'council', label: 'Student Council', icon: '🗳️' },
     { id: 'cooking', label: 'Cooking Activity', icon: '🍳' },
     { id: 'orientation', label: 'Parents Orientation', icon: '👨‍👩‍👧' },
@@ -293,5 +294,37 @@ export const galleryImages = [
         category: 'council',
         title: 'White House Prefects with Faculty Mentors',
         src: '/assets/gallery/council/council_white_house.jpg'
+    },
+
+    // --- ANNUAL RESULT DAY ---
+    {
+        id: 44,
+        category: 'results',
+        title: 'Annual Result Day Merit Trophies Table',
+        src: '/assets/gallery/results/annual_result_trophies.jpg'
+    },
+    {
+        id: 45,
+        category: 'results',
+        title: '1st Rank Topper on Victory Podium',
+        src: '/assets/gallery/results/annual_result_podium_topper.jpg'
+    },
+    {
+        id: 46,
+        category: 'results',
+        title: 'Academic Distinction Group Felicitation',
+        src: '/assets/gallery/results/annual_result_merit_group.jpg'
+    },
+    {
+        id: 47,
+        category: 'results',
+        title: 'Top 3 Position Holders on Podium with Faculty',
+        src: '/assets/gallery/results/annual_result_top_rankers.jpg'
+    },
+    {
+        id: 48,
+        category: 'results',
+        title: 'Prize & Merit Certificate Distribution Ceremony',
+        src: '/assets/gallery/results/annual_result_award_ceremony.jpg'
     }
 ];
