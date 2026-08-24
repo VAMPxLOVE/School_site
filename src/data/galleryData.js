@@ -20,6 +20,7 @@
 export const galleryCategories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
     { id: 'campus', label: 'Campus & Facilities', icon: '🏫' },
+    { id: 'health', label: 'Health Awareness', icon: '🩺' },
     { id: 'sports', label: 'Sports & Athletics', icon: '⚽' },
     { id: 'events', label: 'Annual Day & Cultural', icon: '🎭' },
     { id: 'science', label: 'Science & Labs', icon: '🔬' },
@@ -245,5 +246,52 @@ export const galleryImages = [
         src: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80',
         date: '2026',
         tags: ['workshop', 'maths', 'learning', 'academics']
+    },
+
+    // --- HEALTH AWARENESS & WELLNESS ---
+    {
+        id: 24,
+        category: 'health',
+        title: 'Hygiene & Health Awareness Drive',
+        caption: 'Special health awareness drive promoting student hygiene and wellness with health kit distributions.',
+        src: '/assets/gallery/health/hygiene_awareness_kits.jpg',
+        date: '2026',
+        tags: ['health', 'hygiene', 'wellness', 'awareness', 'campaign']
+    },
+    {
+        id: 25,
+        category: 'health',
+        title: 'Student Wellness & Hygiene Workshop',
+        caption: 'Interactive seminar in the school hall educating students on balanced health and daily personal hygiene.',
+        src: '/assets/gallery/health/health_seminar_hall.jpg',
+        date: '2026',
+        tags: ['health', 'seminar', 'wellness', 'workshop']
+    },
+    {
+        id: 26,
+        category: 'health',
+        title: 'Adolescent Health Guidance Session',
+        caption: 'Educating young students on personal care, nutrition, and healthy daily habits.',
+        src: '/assets/gallery/health/student_wellness_session.jpg',
+        date: '2026',
+        tags: ['health', 'guidance', 'nutrition', 'students']
+    },
+    {
+        id: 27,
+        category: 'health',
+        title: 'Health Awareness Delegation & Assembly',
+        caption: 'Students participating enthusiastically in the school-wide health and hygiene awareness initiative.',
+        src: '/assets/gallery/health/health_awareness_group.jpg',
+        date: '2026',
+        tags: ['health', 'assembly', 'awareness', 'group']
+    },
+    {
+        id: 28,
+        category: 'health',
+        title: 'POCSO Act & Child Safety Awareness Program',
+        caption: 'Educational presentation on child rights, safety guidelines, and legal awareness conducted in the digital hall.',
+        src: '/assets/gallery/health/pocso_safety_awareness.jpg',
+        date: '2026',
+        tags: ['pocso', 'child-safety', 'health', 'awareness', 'legal-rights']
     }
 ];
