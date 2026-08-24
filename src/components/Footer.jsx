@@ -3,44 +3,119 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="footer" style={{ position: 'relative', marginTop: '6rem' }}>
-            <div style={{ position: 'absolute', top: '-50px', left: 0, width: '100%', overflow: 'hidden', lineHeight: 0 }}>
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ position: 'relative', display: 'block', width: 'calc(138% + 1.3px)', height: '50px', transform: 'rotateY(180deg)' }}>
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#003366"></path>
-                </svg>
-            </div>
-            <div className="container footer-content">
-                <div className="footer-section">
-                    <h4>D.R.P. CONVENT PUBLIC SCHOOL</h4>
-                    <p>Near Shiv Vihar Tiraha & Gokalpuri, Main Road, Gokalpuri, Delhi-110094</p>
-                    <p>Phone:+91 8287710710</p>
-                    <p>Email: <a href="mailto:drpconventschool@gmail.com">drpconventschool@gmail.com</a></p>
-                </div>
-                <div className="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/admissions">Admissions</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
-                    </ul>
-                </div>
-                <div className="footer-section">
-                    <h4>Follow Us</h4>
-                    <div className="social-links">
-                        <a href="#" aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                        </a>
-                        <a href="https://www.instagram.com/drpschool/" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.073-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
-                        </a>
-                        <a href="#" aria-label="X (Twitter)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-                        </a>
+        <footer className="site-footer">
+            {/* Top Institutional Banner */}
+            <div className="footer-top-strip">
+                <div className="container footer-top-content">
+                    <div className="footer-brand-info">
+                        <img src="/assets/logo.jpg" alt="D.R.P. Convent Public School Logo" className="footer-logo-img" />
+                        <div>
+                            <h3 className="footer-school-name">D.R.P. CONVENT PUBLIC SCHOOL</h3>
+                            <span className="footer-affil-text">Recognized & Affiliated to C.B.S.E., New Delhi | Affiliation No: 2131027</span>
+                        </div>
+                    </div>
+                    <div className="footer-top-cta">
+                        <Link to="/admissions" className="footer-btn-apply">
+                            Online Admission Form &rarr;
+                        </Link>
                     </div>
                 </div>
             </div>
-            <div className="footer-bottom">
-                <p>&copy; 2026 D.R.P. CONVENT PUBLIC SCHOOL. All rights reserved.</p>
+
+            {/* Main 4-Column Footer */}
+            <div className="container footer-main-content">
+                <div className="footer-grid">
+                    {/* Col 1: About & Motto */}
+                    <div className="footer-col">
+                        <h4 className="footer-heading">About Institution</h4>
+                        <p className="footer-text">
+                            D.R.P. Convent Public School is committed to delivering quality CBSE education, fostering moral integrity, academic brilliance, and co-curricular excellence since 1998.
+                        </p>
+                        <div className="footer-badge-wrap">
+                            <span className="footer-pill-badge">🎓 28+ Years of Service</span>
+                            <span className="footer-pill-badge">🌟 2400+ Alumni</span>
+                        </div>
+                    </div>
+
+                    {/* Col 2: Quick Links */}
+                    <div className="footer-col">
+                        <h4 className="footer-heading">Quick Links</h4>
+                        <ul className="footer-links">
+                            <li><Link to="/about">About School & Heritage</Link></li>
+                            <li><Link to="/founder">Founder's Desk</Link></li>
+                            <li><Link to="/vision">Vision & Core Mission</Link></li>
+                            <li><Link to="/faculty">Faculty & Staff</Link></li>
+                            <li><Link to="/admissions">Admissions & Eligibility</Link></li>
+                            <li><Link to="/gallery">Photo Gallery (Campus & Events)</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Col 3: Academics & Student Zone */}
+                    <div className="footer-col">
+                        <h4 className="footer-heading">Academics & Student Zone</h4>
+                        <ul className="footer-links">
+                            <li><Link to="/academics">CBSE Curriculum & Pedagogy</Link></li>
+                            <li><Link to="/calendar">Annual Academic Calendar</Link></li>
+                            <li><Link to="/results">Board Examination Results</Link></li>
+                            <li><Link to="/downloads">Download Syllabus & Booklets</Link></li>
+                            <li><Link to="/notices">Official Notices & Circulars</Link></li>
+                            <li><Link to="/conduct">Parent & Visitor Guidelines</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Col 4: Contact & Office */}
+                    <div className="footer-col">
+                        <h4 className="footer-heading">Contact & Location</h4>
+                        <ul className="footer-contact-list">
+                            <li>
+                                <span className="contact-icon">📍</span>
+                                <span>Near Shiv Vihar Tiraha & Gokalpuri, Main Road, Gokalpuri, Delhi-110094</span>
+                            </li>
+                            <li>
+                                <span className="contact-icon">📞</span>
+                                <a href="tel:+918287710710">+91 8287710710</a>
+                            </li>
+                            <li>
+                                <span className="contact-icon">✉️</span>
+                                <a href="mailto:drpconventschool@gmail.com">drpconventschool@gmail.com</a>
+                            </li>
+                            <li>
+                                <span className="contact-icon">⏰</span>
+                                <span>Mon - Sat: 8:00 AM – 2:30 PM</span>
+                            </li>
+                        </ul>
+
+                        {/* Social Channels */}
+                        <div className="footer-social-wrap">
+                            <span className="social-label">Connect:</span>
+                            <div className="social-icons-row">
+                                <a href="https://www.instagram.com/drpschool/" target="_blank" rel="noopener noreferrer" className="social-circle-link" aria-label="Instagram">
+                                    📸
+                                </a>
+                                <a href="#" className="social-circle-link" aria-label="Facebook">
+                                    📘
+                                </a>
+                                <a href="#" className="social-circle-link" aria-label="YouTube">
+                                    ▶️
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom Copyright Bar */}
+            <div className="footer-bottom-bar">
+                <div className="container footer-bottom-content">
+                    <p>&copy; {new Date().getFullYear()} D.R.P. CONVENT PUBLIC SCHOOL. All Rights Reserved.</p>
+                    <div className="footer-bottom-links">
+                        <Link to="/privacy">Privacy Policy</Link>
+                        <span>•</span>
+                        <Link to="/terms">Terms of Use</Link>
+                        <span>•</span>
+                        <Link to="/login">ERP Admin Login</Link>
+                    </div>
+                </div>
             </div>
         </footer>
     );
