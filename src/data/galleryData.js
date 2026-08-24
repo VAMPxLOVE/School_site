@@ -5,6 +5,7 @@
 export const galleryCategories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
     { id: 'campus', label: 'Campus & Facilities', icon: '🏫' },
+    { id: 'grandparents', label: 'Grandparents Day', icon: '👵👴' },
     { id: 'independence', label: 'Independence Day', icon: '🇮🇳' },
     { id: 'samarpan', label: 'Samarpan & Janmashtami', icon: '🪔' },
     { id: 'results', label: 'Annual Result Day', icon: '🏆' },
@@ -398,5 +399,37 @@ export const galleryImages = [
         category: 'independence',
         title: 'Happy Independence Day Rangoli Creation',
         src: '/assets/gallery/independence/independence_tricolour_rangoli.jpg'
+    },
+
+    // --- GRANDPARENTS DAY CELEBRATIONS ---
+    {
+        id: 60,
+        category: 'grandparents',
+        title: 'Grandparents Day Celebrations - Twins Photo Frame',
+        src: '/assets/gallery/grandparents/grandparents_day_twins.jpg'
+    },
+    {
+        id: 61,
+        category: 'grandparents',
+        title: 'Grandparents Blessing - Photo Frame Memories',
+        src: '/assets/gallery/grandparents/grandparents_day_girls.jpg'
+    },
+    {
+        id: 62,
+        category: 'grandparents',
+        title: 'Handcrafted Greeting Card for Grandparents',
+        src: '/assets/gallery/grandparents/grandparents_day_greeting_card.jpg'
+    },
+    {
+        id: 63,
+        category: 'grandparents',
+        title: 'Grandparents Day - Heartfelt Family Moments',
+        src: '/assets/gallery/grandparents/grandparents_day_family_frame.jpg'
+    },
+    {
+        id: 64,
+        category: 'grandparents',
+        title: 'Students Presenting Love to Grandparents',
+        src: '/assets/gallery/grandparents/grandparents_day_handmade_cards.jpg'
     }
 ];
