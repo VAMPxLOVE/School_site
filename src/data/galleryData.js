@@ -5,6 +5,7 @@
 export const galleryCategories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
     { id: 'campus', label: 'Campus & Facilities', icon: '🏫' },
+    { id: 'cooking', label: 'Cooking Activity', icon: '🍳' },
     { id: 'orientation', label: 'Parents Orientation', icon: '👨‍👩‍👧' },
     { id: 'health', label: 'Health Awareness', icon: '🩺' },
     { id: 'sports', label: 'Sports & Athletics', icon: '⚽' },
@@ -227,5 +228,37 @@ export const galleryImages = [
         category: 'academics',
         title: 'Maths & Puzzle Workshop',
         src: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80'
+    },
+
+    // --- COOKING WITHOUT FIRE ACTIVITY ---
+    {
+        id: 34,
+        category: 'cooking',
+        title: 'Little Chefs - Cooking Without Fire Team',
+        src: '/assets/gallery/cooking/cooking_without_fire_team.jpg'
+    },
+    {
+        id: 35,
+        category: 'cooking',
+        title: 'Dahi Golgappe & Refreshing Drinks Platter',
+        src: '/assets/gallery/cooking/cooking_golgappa_platter.jpg'
+    },
+    {
+        id: 36,
+        category: 'cooking',
+        title: 'Club Sandwiches & Red Mocktails',
+        src: '/assets/gallery/cooking/cooking_sandwiches_mocktails.jpg'
+    },
+    {
+        id: 37,
+        category: 'cooking',
+        title: 'Culinary Platter with Special Chutneys',
+        src: '/assets/gallery/cooking/cooking_delicious_platters.jpg'
+    },
+    {
+        id: 38,
+        category: 'cooking',
+        title: 'Class Vth Activity Menu Blackboard',
+        src: '/assets/gallery/cooking/cooking_activity_board.jpg'
     }
 ];
