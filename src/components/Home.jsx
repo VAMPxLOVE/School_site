@@ -103,7 +103,7 @@ const Home = () => {
                         <div className="stat-label">Years of Excellence</div>
                     </div>
                     <div className="stat-card">
-                        <div className="stat-number">1200+</div>
+                        <div className="stat-number">2400+</div>
                         <div className="stat-label">Alumni's</div>
                     </div>
                     <div className="stat-card">
