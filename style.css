@@ -865,6 +865,7 @@ h6 {
         opacity: 1;
         transform: scale(1);
     }
+
     100% {
         opacity: 0;
         transform: scale(1.05);
@@ -1288,8 +1289,13 @@ body::before {
 
 /* Lightbox Modal */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes zoomInModal {
@@ -1297,6 +1303,7 @@ body::before {
         transform: scale(0.94);
         opacity: 0;
     }
+
     to {
         transform: scale(1);
         opacity: 1;
@@ -1459,9 +1466,11 @@ body::before {
     .lightbox-prev {
         left: 0.5rem;
     }
+
     .lightbox-next {
         right: 0.5rem;
     }
+
     .lightbox-arrow {
         width: 2.6rem;
         height: 2.6rem;
@@ -1475,18 +1484,23 @@ body::before {
         grid-template-columns: 1fr;
         gap: 1.2rem;
     }
+
     .gallery-card {
         height: 250px;
     }
+
     .lightbox-image-wrap img {
         max-height: 55vh;
     }
+
     .lightbox-title {
         font-size: 1.15rem;
     }
+
     .lightbox-caption {
         font-size: 0.85rem;
     }
+
     .lightbox-kbd-hint {
         display: none;
     }
