@@ -5,6 +5,7 @@
 export const galleryCategories = [
     { id: 'all', label: 'All Photos', icon: '📸' },
     { id: 'campus', label: 'Campus & Facilities', icon: '🏫' },
+    { id: 'farewell', label: 'Farewell Ceremony', icon: '🎓' },
     { id: 'diwali', label: 'Diwali Celebrations', icon: '🪔' },
     { id: 'halloween', label: 'Halloween Day', icon: '🎃' },
     { id: 'grandparents', label: 'Grandparents Day', icon: '👵👴' },
@@ -497,5 +498,37 @@ export const galleryImages = [
         category: 'diwali',
         title: 'Agni House Shubh Labh Floral Rangoli',
         src: '/assets/gallery/diwali/diwali_agni_house_rangoli.jpg'
+    },
+
+    // --- FAREWELL CEREMONY ---
+    {
+        id: 75,
+        category: 'farewell',
+        title: 'Happy Farewell Celebration Welcome Arch',
+        src: '/assets/gallery/farewell/farewell_balloon_arch.jpg'
+    },
+    {
+        id: 76,
+        category: 'farewell',
+        title: 'Class XII Farewell Dance & Memories',
+        src: '/assets/gallery/farewell/farewell_celebration_dance.jpg'
+    },
+    {
+        id: 77,
+        category: 'farewell',
+        title: 'Farewell Memento Presentation to Student',
+        src: '/assets/gallery/farewell/farewell_memento_presentation_1.jpg'
+    },
+    {
+        id: 78,
+        category: 'farewell',
+        title: 'Token of Blessing & Best Wishes to Outgoing Student',
+        src: '/assets/gallery/farewell/farewell_memento_presentation_2.jpg'
+    },
+    {
+        id: 79,
+        category: 'farewell',
+        title: 'Graduating Student Felicitation by Faculty',
+        src: '/assets/gallery/farewell/farewell_memento_presentation_3.jpg'
     }
 ];
