@@ -17,7 +17,7 @@ const Home = () => {
             secondaryLink: '/gallery'
         },
         {
-            image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80',
+            image: '/assets/gallery/campus/smart_digital_classroom.jpg',
             badge: 'WORLD-CLASS PEDAGOGY',
             title: 'Empowering Young Minds Through Experiential Learning',
             subtitle: 'Modern smart interactive classrooms, state-of-the-art science & computer labs, and holistic sports facilities',
@@ -27,7 +27,7 @@ const Home = () => {
             secondaryLink: '/results'
         },
         {
-            image: 'https://images.unsplash.com/photo-1577896334614-2019376d108d?w=1600&q=80',
+            image: '/assets/gallery/sports/sports_interhouse_team_assembly.jpg',
             badge: 'HOLISTIC DEVELOPMENT',
             title: 'Celebrating Creativity, Sports & Moral Character',
             subtitle: 'Comprehensive co-curricular education fostering instrumental music, athletics, and cultural values',
@@ -227,6 +227,93 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* --- WINGS OF LEARNING (GURUKUL ACADEMIC STAGES) --- */}
+            <section className="wings-section">
+                <div className="container">
+                    <div className="section-header-center">
+                        <span className="section-kicker">CURRICULUM STAGES</span>
+                        <h2 className="section-title">Wings of Holistic Learning</h2>
+                        <p className="section-desc">
+                            Structured developmental stages designed to guide every child from early curiosity to senior scholastic brilliance.
+                        </p>
+                    </div>
+
+                    <div className="wings-grid">
+                        {/* Wing 1: Foundation */}
+                        <div className="wing-card">
+                            <div className="wing-header">
+                                <div className="wing-icon">🌱</div>
+                                <span className="wing-grade-badge">PRE-PRIMARY</span>
+                                <h3 className="wing-title">Foundation Wing</h3>
+                            </div>
+                            <div className="wing-body">
+                                <p className="wing-desc">Play-based, sensory, and phonics-centered early childhood development cultivating joy and curiosity.</p>
+                                <ul className="wing-features">
+                                    <li><span>✓</span> Experiential Activity Play</li>
+                                    <li><span>✓</span> Phonics & Motor Skills</li>
+                                    <li><span>✓</span> Safe Indoor Play Zone</li>
+                                </ul>
+                                <Link to="/admissions" className="wing-link">Admissions &rarr;</Link>
+                            </div>
+                        </div>
+
+                        {/* Wing 2: Primary */}
+                        <div className="wing-card">
+                            <div className="wing-header">
+                                <div className="wing-icon">📖</div>
+                                <span className="wing-grade-badge">CLASSES I - V</span>
+                                <h3 className="wing-title">Primary Wing</h3>
+                            </div>
+                            <div className="wing-body">
+                                <p className="wing-desc">Laying fundamental numeracy, literacy, scientific inquiry, and ethical values through interactive learning.</p>
+                                <ul className="wing-features">
+                                    <li><span>✓</span> Smart Board Classes</li>
+                                    <li><span>✓</span> Creative Arts & Cooking</li>
+                                    <li><span>✓</span> Individual Mentorship</li>
+                                </ul>
+                                <Link to="/academics" className="wing-link">Curriculum &rarr;</Link>
+                            </div>
+                        </div>
+
+                        {/* Wing 3: Middle */}
+                        <div className="wing-card">
+                            <div className="wing-header">
+                                <div className="wing-icon">🔬</div>
+                                <span className="wing-grade-badge">CLASSES VI - VIII</span>
+                                <h3 className="wing-title">Middle Wing</h3>
+                            </div>
+                            <div className="wing-body">
+                                <p className="wing-desc">Deepening subject mastery, analytical thinking, laboratory experiments, and competitive sports leagues.</p>
+                                <ul className="wing-features">
+                                    <li><span>✓</span> Practical Science Labs</li>
+                                    <li><span>✓</span> Student Council Leadership</li>
+                                    <li><span>✓</span> Inter-House Championships</li>
+                                </ul>
+                                <Link to="/academics" className="wing-link">Subjects &rarr;</Link>
+                            </div>
+                        </div>
+
+                        {/* Wing 4: Senior */}
+                        <div className="wing-card">
+                            <div className="wing-header">
+                                <div className="wing-icon">🎓</div>
+                                <span className="wing-grade-badge">CLASSES IX - XII</span>
+                                <h3 className="wing-title">Senior Wing</h3>
+                            </div>
+                            <div className="wing-body">
+                                <p className="wing-desc">Rigorous CBSE Board preparation, career counseling, practical distinction, and collegiate readiness.</p>
+                                <ul className="wing-features">
+                                    <li><span>✓</span> 100% Board Success Track</li>
+                                    <li><span>✓</span> Science & Commerce Streams</li>
+                                    <li><span>✓</span> Career Guidance Seminars</li>
+                                </ul>
+                                <Link to="/results" className="wing-link">Board Results &rarr;</Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* --- KEY METRICS COUNTER STRIP --- */}
             <section className="stats-ribbon-section">
                 <div className="container">
@@ -244,7 +331,7 @@ const Home = () => {
                         <div className="stats-ribbon-card">
                             <div className="stat-icon-wrap">📈</div>
                             <div className="stat-value">100%</div>
-                            <div className="stat-name">Board Examination Results</div>
+                            <div className="stat-name">Board Pass Results</div>
                         </div>
                         <div className="stats-ribbon-card">
                             <div className="stat-icon-wrap">🎖️</div>
@@ -262,67 +349,67 @@ const Home = () => {
                         <span className="section-kicker">CAMPUS LIFE & HAPPENINGS</span>
                         <h2 className="section-title">Moments of Discovery, Learning & Joy</h2>
                         <p className="section-desc">
-                            A glimpse into recent student activities, academic sessions, health awareness drives, and parent-school partnerships.
+                            A glimpse into our authentic student activities, academic sessions, health awareness drives, and cultural galas.
                         </p>
                     </div>
 
                     <div className="happenings-grid">
-                        {/* Card 1: Smart Classroom */}
+                        {/* Card 1: Diwali Rangoli */}
                         <div className="happening-card">
                             <div className="happening-img-wrap">
-                                <img src="/assets/gallery/campus/smart_digital_classroom.jpg" alt="Smart Classroom" />
-                                <span className="happening-tag">Academics</span>
+                                <img src="/assets/gallery/diwali/diwali_lakshmi_rangoli_team.jpg" alt="Diwali Celebrations" />
+                                <span className="happening-tag">Celebrations</span>
                             </div>
                             <div className="happening-body">
-                                <h3 className="happening-title">Smart Digital Classroom Learning</h3>
-                                <p className="happening-text">Interactive audiovisual learning modules enhancing conceptual clarity and student participation.</p>
+                                <h3 className="happening-title">Diwali Rangoli & Craft Competitions</h3>
+                                <p className="happening-text">Students showcasing radiant traditional artistry, clay diya painting, and festive spirit.</p>
                                 <Link to="/gallery" className="happening-link">View in Gallery &rarr;</Link>
                             </div>
                         </div>
 
-                        {/* Card 2: Science Lab */}
+                        {/* Card 2: Student Council */}
                         <div className="happening-card">
                             <div className="happening-img-wrap">
-                                <img src="/assets/gallery/campus/science_lab_practical.jpg" alt="Science Lab" />
-                                <span className="happening-tag">Science & Labs</span>
+                                <img src="/assets/gallery/council/student_council_assembly.jpg" alt="Student Council Elections" />
+                                <span className="happening-tag">Leadership</span>
                             </div>
                             <div className="happening-body">
-                                <h3 className="happening-title">Hands-on Science & Lab Inquiries</h3>
-                                <p className="happening-text">Practical laboratory demonstrations fostering curiosity, analytical skills, and scientific temper.</p>
+                                <h3 className="happening-title">Student Council & House Prefects</h3>
+                                <p className="happening-text">Democracy in action fostering integrity, responsibility, and student leadership across all 4 houses.</p>
                                 <Link to="/gallery" className="happening-link">View in Gallery &rarr;</Link>
                             </div>
                         </div>
 
-                        {/* Card 3: Health Awareness */}
+                        {/* Card 3: Sports Competition */}
                         <div className="happening-card">
                             <div className="happening-img-wrap">
-                                <img src="/assets/gallery/health/hygiene_awareness_kits.jpg" alt="Health Awareness" />
-                                <span className="happening-tag">Wellness</span>
+                                <img src="/assets/gallery/sports/sports_interhouse_badminton.jpg" alt="Inter-House Sports" />
+                                <span className="happening-tag">Sports & Games</span>
                             </div>
                             <div className="happening-body">
-                                <h3 className="happening-title">Health, Hygiene & Safety Drives</h3>
-                                <p className="happening-text">Comprehensive student wellness sessions, hygiene kit distributions, and POCSO child safety awareness.</p>
+                                <h3 className="happening-title">Inter-House Sports Tournament</h3>
+                                <p className="happening-text">Thrilling badminton rallies, chess championships, and carrom tournaments building stamina & sportsmanship.</p>
                                 <Link to="/gallery" className="happening-link">View in Gallery &rarr;</Link>
                             </div>
                         </div>
 
-                        {/* Card 4: Parents Orientation */}
+                        {/* Card 4: Result Day */}
                         <div className="happening-card">
                             <div className="happening-img-wrap">
-                                <img src="/assets/gallery/orientation/orientation_welcome_session.jpg" alt="Parents Orientation" />
-                                <span className="happening-tag">Community</span>
+                                <img src="/assets/gallery/results/annual_result_top_rankers.jpg" alt="Annual Result Day" />
+                                <span className="happening-tag">Merit & Awards</span>
                             </div>
                             <div className="happening-body">
-                                <h3 className="happening-title">Parents Orientation 2026-27</h3>
-                                <p className="happening-text">Strengthening parent-school collaboration through curriculum walkthroughs and academic roadmaps.</p>
+                                <h3 className="happening-title">Annual Result Day & Prize Distribution</h3>
+                                <p className="happening-text">Celebrating academic distinction, class toppers on the victory podium, and merit certificates.</p>
                                 <Link to="/gallery" className="happening-link">View in Gallery &rarr;</Link>
                             </div>
                         </div>
                     </div>
 
                     <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-                        <Link to="/gallery" className="btn btn-primary" style={{ borderRadius: '999px', padding: '0.8rem 2.2rem', fontSize: '1rem' }}>
-                            Explore Full School Gallery (30+ Photos) &rarr;
+                        <Link to="/gallery" className="btn btn-primary" style={{ borderRadius: '999px', padding: '0.85rem 2.4rem', fontSize: '1rem' }}>
+                            Explore Full School Gallery (65+ Photos) &rarr;
                         </Link>
                     </div>
                 </div>
@@ -379,31 +466,39 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* --- TESTIMONIALS / VOICES OF EXCELLENCE --- */}
+            {/* --- PARENT & STUDENT TESTIMONIALS --- */}
             <section className="testimonials-section section-padding">
                 <div className="container">
                     <div className="section-header-center">
-                        <span className="section-kicker" style={{ color: '#DAA520' }}>VOICES OF OUR COMMUNITY</span>
-                        <h2 className="section-title" style={{ color: '#ffffff' }}>What Parents & Alumni Say</h2>
+                        <span className="section-kicker">VOICES OF TRUST</span>
+                        <h2 className="section-title">What Parents & Alumni Say</h2>
+                        <p className="section-desc">
+                            Real feedback from families who have entrusted their children's formative journey with us.
+                        </p>
                     </div>
 
-                    <div className="testimonials-container">
-                        <div className="testimonial-card-single">
-                            <div className="quote-mark">“</div>
-                            <p className="testimonial-quote-text">{testimonials[activeTestimonial].quote}</p>
-                            <div className="testimonial-author-box">
+                    <div className="testimonial-card-single">
+                        <div className="testimonial-quote-icon">“</div>
+                        <p className="testimonial-quote-text">
+                            {testimonials[activeTestimonial].quote}
+                        </p>
+                        <div className="testimonial-author-box">
+                            <div className="testimonial-avatar">
+                                {testimonials[activeTestimonial].author.charAt(0)}
+                            </div>
+                            <div>
                                 <h4 className="testimonial-author-name">{testimonials[activeTestimonial].author}</h4>
                                 <span className="testimonial-author-role">{testimonials[activeTestimonial].role}</span>
                             </div>
                         </div>
 
-                        <div className="testimonial-dots">
-                            {testimonials.map((_, index) => (
+                        <div className="testimonial-indicators">
+                            {testimonials.map((_, idx) => (
                                 <button
-                                    key={index}
-                                    className={`testimonial-dot ${index === activeTestimonial ? 'active' : ''}`}
-                                    onClick={() => setActiveTestimonial(index)}
-                                    aria-label={`Testimonial ${index + 1}`}
+                                    key={idx}
+                                    className={`testimonial-indicator ${idx === activeTestimonial ? 'active' : ''}`}
+                                    onClick={() => setActiveTestimonial(idx)}
+                                    aria-label={`Testimonial ${idx + 1}`}
                                 />
                             ))}
                         </div>
@@ -411,23 +506,23 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* --- CALL TO ACTION / ADMISSION STRIP --- */}
+            {/* --- ADMISSIONS CTA STRIP --- */}
             <section className="cta-admission-section">
                 <div className="container">
                     <div className="cta-admission-card">
                         <div className="cta-content">
-                            <span className="cta-kicker">JOIN OUR LEARNING COMMUNITY</span>
-                            <h2 className="cta-title">Admissions Open for Academic Session 2026-27</h2>
+                            <span className="cta-badge">ACADEMIC SESSION 2026-27</span>
+                            <h2 className="cta-title">Begin Your Child's Journey of Excellence</h2>
                             <p className="cta-desc">
-                                Give your child the foundation of academic excellence, values, and leadership. Limited seats available for Pre-Primary to Class XII.
+                                Limited seats available from Pre-School to Senior Secondary. Register today for personal counseling and campus walkthroughs.
                             </p>
                         </div>
                         <div className="cta-buttons">
-                            <Link to="/admissions" className="btn-cta-gold">
-                                Apply Online Now &rarr;
+                            <Link to="/admissions" className="btn btn-primary" style={{ background: '#DAA520', color: '#001f3f', fontWeight: '800', padding: '0.9rem 2rem', borderRadius: '999px' }}>
+                                Apply Online &rarr;
                             </Link>
-                            <Link to="/contact" className="btn-cta-outline">
-                                Schedule Campus Visit
+                            <Link to="/contact" className="btn btn-glass" style={{ borderRadius: '999px', padding: '0.9rem 2rem' }}>
+                                Contact Admissions Desk
                             </Link>
                         </div>
                     </div>

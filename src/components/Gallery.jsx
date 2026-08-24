@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { galleryCategories, galleryImages } from '../data/galleryData';
+import { Link } from 'react-router-dom';
 
 const Gallery = () => {
     const [activeFilter, setActiveFilter] = useState('all');
@@ -39,7 +40,7 @@ const Gallery = () => {
         setSelectedImageIndex((prev) => (prev - 1 + filteredImages.length) % filteredImages.length);
     }, [selectedImageIndex, filteredImages.length]);
 
-    // Keyboard navigation (Esc, ArrowLeft, ArrowRight)
+    // Keyboard navigation
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (selectedImageIndex === null) return;
@@ -67,262 +68,174 @@ const Gallery = () => {
     const currentImage = selectedImageIndex !== null ? filteredImages[selectedImageIndex] : null;
 
     return (
-        <div className="container page-content" style={{ paddingBottom: '4rem' }}>
-            {/* Minimal Header */}
-            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                <h1 className="text-3d-shadow" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>School Gallery</h1>
-                <p style={{ color: '#667085', fontSize: '1rem' }}>
-                    Moments and memories at D.R.P. Convent Public School
-                </p>
+        <div className="gallery-page-container">
+            {/* --- GURUKUL STYLE GRAND HEADER BANNER --- */}
+            <div className="gurukul-page-header">
+                <div className="container">
+                    <div className="gurukul-header-content">
+                        <span className="gurukul-kicker">✦ LIFE AT D.R.P. CONVENT ✦</span>
+                        <h1 className="gurukul-page-title">Visual Chronicles & Campus Gallery</h1>
+                        <div className="gurukul-gold-divider">
+                            <span className="divider-line"></span>
+                            <span className="divider-icon">🏛️</span>
+                            <span className="divider-line"></span>
+                        </div>
+                        <p className="gurukul-header-desc">
+                            Explore our vibrant tapestry of academic distinction, cultural galas, sports tournaments, and joyful student milestones.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            {/* Clean Category Filter Pills */}
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '0.6rem',
-                    flexWrap: 'wrap',
-                    marginBottom: '2.5rem'
-                }}
-            >
-                {galleryCategories.map((cat) => {
-                    const count = categoryCounts[cat.id] || 0;
-                    const isActive = activeFilter === cat.id;
-                    return (
-                        <button
-                            key={cat.id}
-                            onClick={() => setActiveFilter(cat.id)}
-                            style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '0.45rem',
-                                padding: '0.5rem 1.1rem',
-                                borderRadius: '999px',
-                                border: isActive ? '1px solid #003366' : '1px solid rgba(0, 51, 102, 0.12)',
-                                background: isActive ? '#003366' : '#ffffff',
-                                color: isActive ? '#ffffff' : '#003366',
-                                fontWeight: '600',
-                                fontSize: '0.9rem',
-                                cursor: 'pointer',
-                                transition: 'all 0.2s ease',
-                                boxShadow: isActive ? '0 4px 12px rgba(0, 51, 102, 0.2)' : '0 2px 5px rgba(0, 0, 0, 0.04)'
-                            }}
-                        >
-                            <span>{cat.icon}</span>
-                            <span>{cat.label}</span>
-                            <span
-                                style={{
-                                    fontSize: '0.75rem',
-                                    padding: '0.1rem 0.45rem',
-                                    borderRadius: '999px',
-                                    background: isActive ? 'rgba(255,255,255,0.2)' : 'rgba(0, 51, 102, 0.08)',
-                                    color: isActive ? '#ffffff' : '#003366'
-                                }}
-                            >
-                                {count}
-                            </span>
+            <div className="container" style={{ padding: '2.5rem 1rem 5rem' }}>
+                {/* --- GURUKUL CATEGORY FILTER TABS --- */}
+                <div className="gurukul-tabs-wrapper">
+                    <div className="gurukul-tabs-scroll">
+                        {galleryCategories.map((cat) => {
+                            const count = categoryCounts[cat.id] || 0;
+                            const isActive = activeFilter === cat.id;
+                            return (
+                                <button
+                                    key={cat.id}
+                                    onClick={() => setActiveFilter(cat.id)}
+                                    className={`gurukul-tab-btn ${isActive ? 'active' : ''}`}
+                                >
+                                    <span className="tab-icon">{cat.icon}</span>
+                                    <span className="tab-label">{cat.label}</span>
+                                    <span className="tab-badge">{count}</span>
+                                </button>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                {/* --- GALLERY STATS BAR --- */}
+                <div className="gallery-meta-bar">
+                    <div className="meta-left">
+                        Showing <strong>{filteredImages.length}</strong> authentic photos
+                        {activeFilter !== 'all' && (
+                            <span> in <em>{galleryCategories.find(c => c.id === activeFilter)?.label}</em></span>
+                        )}
+                    </div>
+                    {activeFilter !== 'all' && (
+                        <button onClick={() => setActiveFilter('all')} className="meta-reset-btn">
+                            View All ({galleryImages.length}) &times;
                         </button>
-                    );
-                })}
+                    )}
+                </div>
+
+                {/* --- GURUKUL MASONRY / DYNAMIC GRID --- */}
+                <div className="gurukul-gallery-grid">
+                    {filteredImages.map((img, index) => {
+                        const categoryObj = galleryCategories.find(c => c.id === img.category);
+                        return (
+                            <div
+                                key={img.id || index}
+                                className="gurukul-photo-card"
+                                onClick={() => openLightbox(index)}
+                            >
+                                <div className="photo-card-inner">
+                                    <img
+                                        src={img.src}
+                                        alt={img.title}
+                                        loading="lazy"
+                                        className="photo-card-img"
+                                    />
+                                    <div className="photo-card-overlay">
+                                        <div className="photo-overlay-top">
+                                            <span className="photo-category-chip">
+                                                {categoryObj?.icon} {categoryObj?.label}
+                                            </span>
+                                            <span className="photo-zoom-btn">🔍</span>
+                                        </div>
+                                        <div className="photo-overlay-bottom">
+                                            <h4 className="photo-title">{img.title}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {filteredImages.length === 0 && (
+                    <div className="gallery-empty-state">
+                        <span style={{ fontSize: '3rem' }}>📷</span>
+                        <h3>No Photos Available</h3>
+                        <p>Select another category above to view school memories.</p>
+                    </div>
+                )}
             </div>
 
-            {/* Clean Image Grid */}
-            <div
-                style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                    gap: '1.25rem'
-                }}
-            >
-                {filteredImages.map((img, index) => (
-                    <div
-                        key={img.id || index}
-                        onClick={() => openLightbox(index)}
-                        style={{
-                            position: 'relative',
-                            borderRadius: '12px',
-                            overflow: 'hidden',
-                            cursor: 'pointer',
-                            aspectRatio: '4 / 3',
-                            background: '#e9ecef',
-                            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.06)',
-                            transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease'
+            {/* --- GURUKUL FULLSCREEN LIGHTBOX MODAL --- */}
+            {selectedImageIndex !== null && currentImage && (
+                <div className="gurukul-lightbox" onClick={closeLightbox}>
+                    <div className="lightbox-backdrop"></div>
+
+                    {/* Top Control Bar */}
+                    <div className="lightbox-top-bar" onClick={(e) => e.stopPropagation()}>
+                        <div className="lightbox-info">
+                            <span className="lightbox-counter">
+                                {selectedImageIndex + 1} / {filteredImages.length}
+                            </span>
+                            <span className="lightbox-title-top">{currentImage.title}</span>
+                        </div>
+                        <button className="lightbox-close-btn" onClick={closeLightbox} aria-label="Close">
+                            &times;
+                        </button>
+                    </div>
+
+                    {/* Previous Button */}
+                    <button
+                        className="lightbox-nav-btn prev"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            prevImage();
                         }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-4px)';
-                            e.currentTarget.style.boxShadow = '0 12px 28px rgba(0, 51, 102, 0.15)';
-                            const overlay = e.currentTarget.querySelector('.photo-title-overlay');
-                            if (overlay) overlay.style.opacity = '1';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.06)';
-                            const overlay = e.currentTarget.querySelector('.photo-title-overlay');
-                            if (overlay) overlay.style.opacity = '0';
-                        }}
+                        aria-label="Previous"
                     >
+                        &#10094;
+                    </button>
+
+                    {/* Main Image Container */}
+                    <div className="lightbox-center-container" onClick={(e) => e.stopPropagation()}>
                         <img
-                            src={img.src}
-                            alt={img.title || 'School Photo'}
-                            loading="lazy"
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
-                                display: 'block',
-                                transition: 'transform 0.5s ease'
-                            }}
+                            src={currentImage.src}
+                            alt={currentImage.title}
+                            className="lightbox-main-image"
                         />
-                        {/* Minimalist Hover Overlay - Shows only clean title */}
-                        <div
-                            className="photo-title-overlay"
-                            style={{
-                                position: 'absolute',
-                                inset: 0,
-                                background: 'linear-gradient(to top, rgba(0, 24, 48, 0.85) 0%, transparent 60%)',
-                                opacity: 0,
-                                transition: 'opacity 0.25s ease',
-                                display: 'flex',
-                                alignItems: 'flex-end',
-                                padding: '1rem 1.2rem',
-                                color: '#ffffff'
-                            }}
-                        >
-                            <span style={{ fontSize: '0.95rem', fontWeight: '600', letterSpacing: '0.02em' }}>
-                                {img.title}
+                        <div className="lightbox-caption-card">
+                            <h3 className="caption-title">{currentImage.title}</h3>
+                            <span className="caption-tag">
+                                {galleryCategories.find(c => c.id === currentImage.category)?.icon}{' '}
+                                {galleryCategories.find(c => c.id === currentImage.category)?.label}
                             </span>
                         </div>
                     </div>
-                ))}
-            </div>
 
-            {/* Clean Lightbox Modal */}
-            {selectedImageIndex !== null && currentImage && (
-                <div
-                    className="lightbox-overlay"
-                    onClick={closeLightbox}
-                    style={{
-                        position: 'fixed',
-                        inset: 0,
-                        background: 'rgba(0, 0, 0, 0.92)',
-                        backdropFilter: 'blur(8px)',
-                        zIndex: 3000,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        padding: '1.5rem'
-                    }}
-                >
-                    <div
-                        style={{
-                            position: 'relative',
-                            maxWidth: '92vw',
-                            maxHeight: '92vh',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center'
+                    {/* Next Button */}
+                    <button
+                        className="lightbox-nav-btn next"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            nextImage();
                         }}
-                        onClick={(e) => e.stopPropagation()}
+                        aria-label="Next"
                     >
-                        {/* Close button */}
-                        <button
-                            type="button"
-                            onClick={closeLightbox}
-                            style={{
-                                position: 'absolute',
-                                top: '-3rem',
-                                right: '0',
-                                background: 'none',
-                                border: 'none',
-                                color: '#ffffff',
-                                fontSize: '2rem',
-                                cursor: 'pointer',
-                                opacity: 0.85,
-                                padding: '0.2rem 0.5rem'
-                            }}
-                            title="Close (Esc)"
-                        >
-                            &times;
-                        </button>
+                        &#10095;
+                    </button>
 
-                        {/* Image with Prev/Next buttons */}
-                        <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            {filteredImages.length > 1 && (
-                                <button
-                                    type="button"
-                                    onClick={prevImage}
-                                    style={{
-                                        position: 'absolute',
-                                        left: '-3.5rem',
-                                        background: 'rgba(255, 255, 255, 0.15)',
-                                        border: '1px solid rgba(255, 255, 255, 0.25)',
-                                        color: '#ffffff',
-                                        width: '2.8rem',
-                                        height: '2.8rem',
-                                        borderRadius: '50%',
-                                        fontSize: '1.4rem',
-                                        cursor: 'pointer',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        backdropFilter: 'blur(6px)'
-                                    }}
-                                    title="Previous (←)"
-                                >
-                                    &#8249;
-                                </button>
-                            )}
-
-                            <img
-                                src={currentImage.src}
-                                alt={currentImage.title}
-                                style={{
-                                    maxWidth: '88vw',
-                                    maxHeight: '78vh',
-                                    borderRadius: '8px',
-                                    boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-                                    objectFit: 'contain'
-                                }}
-                            />
-
-                            {filteredImages.length > 1 && (
-                                <button
-                                    type="button"
-                                    onClick={nextImage}
-                                    style={{
-                                        position: 'absolute',
-                                        right: '-3.5rem',
-                                        background: 'rgba(255, 255, 255, 0.15)',
-                                        border: '1px solid rgba(255, 255, 255, 0.25)',
-                                        color: '#ffffff',
-                                        width: '2.8rem',
-                                        height: '2.8rem',
-                                        borderRadius: '50%',
-                                        fontSize: '1.4rem',
-                                        cursor: 'pointer',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        backdropFilter: 'blur(6px)'
-                                    }}
-                                    title="Next (→)"
-                                >
-                                    &#8250;
-                                </button>
-                            )}
-                        </div>
-
-                        {/* Minimal Title & Counter - No paragraphs */}
-                        <div style={{ textAlign: 'center', marginTop: '1rem', color: '#ffffff' }}>
-                            <div style={{ fontSize: '1.15rem', fontWeight: '600', marginBottom: '0.25rem' }}>
-                                {currentImage.title}
+                    {/* Bottom Filmstrip Thumbnails */}
+                    <div className="lightbox-filmstrip" onClick={(e) => e.stopPropagation()}>
+                        {filteredImages.map((thumb, tIdx) => (
+                            <div
+                                key={thumb.id || tIdx}
+                                className={`filmstrip-item ${tIdx === selectedImageIndex ? 'active' : ''}`}
+                                onClick={() => setSelectedImageIndex(tIdx)}
+                            >
+                                <img src={thumb.src} alt={thumb.title} />
                             </div>
-                            <div style={{ fontSize: '0.85rem', opacity: 0.6 }}>
-                                {selectedImageIndex + 1} / {filteredImages.length}
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             )}
