@@ -27,6 +27,7 @@ import ParentConduct from './components/ParentConduct';
 import WelcomeScreen from './components/WelcomeScreen';
 import Faculty from './components/Faculty';
 import Chatbot from './components/Chatbot';
+import FloatingSideDock from './components/FloatingSideDock';
 
 function App() {
     return (
@@ -58,6 +59,7 @@ function App() {
                     </Routes>
                 </main>
                 <Footer />
+                <FloatingSideDock />
                 <Chatbot />
             </div>
         </Router>

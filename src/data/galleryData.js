@@ -40,30 +40,7 @@ export const galleryImages = [
         title: 'Science & Chemistry Lab',
         src: '/assets/gallery/campus/science_lab_practical.jpg'
     },
-    {
-        id: 4,
-        category: 'campus',
-        title: 'Sports & Athletic Grounds',
-        src: '/assets/gallery/campus/campus_sports_ground.jpg'
-    },
-    {
-        id: 5,
-        category: 'campus',
-        title: 'Art & Creative Craft Studio',
-        src: '/assets/gallery/campus/campus_art_craft_center.jpg'
-    },
-    {
-        id: 6,
-        category: 'campus',
-        title: 'Yoga & Meditation Arena',
-        src: '/assets/gallery/campus/campus_yoga_meditation.jpg'
-    },
-    {
-        id: 7,
-        category: 'campus',
-        title: 'Main School Academic Building',
-        src: '/assets/gallery/campus/campus_facade_building.jpg'
-    },
+
 
     // --- FAREWELL CEREMONY ---
     {

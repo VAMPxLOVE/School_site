@@ -1,41 +1,86 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SchoolCalendar = () => {
     const events = [
-        { month: "April 2026", events: ["New Session Begins", "World Health Day Assembly"] },
-        { month: "May 2026", events: ["Summer Camp Starts", "Unit Test 1 (Classes 6-10)", "Mother's Day Celebration"] },
-        { month: "June 2026", events: ["Summer Vacation", "International Yoga Day"] },
-        { month: "July 2026", events: ["School Reopens", "Investiture Ceremony"] },
-        { month: "August 2026", events: ["Independence Day Celebration", "Rakhi Making Competition"] },
-        { month: "September 2026", events: ["Teacher's Day", "Half-Yearly Examinations"] },
-        { month: "October 2026", events: ["Gandhi Jayanti", "Diwali Break", "Inter-House Sports Meet"] },
-        { month: "November 2026", events: ["Children's Day Fete", "Annual Day Function"] },
-        { month: "December 2026", events: ["Pre-Board Exams (Class 10 & 12)", "Winter Carnival", "Christmas Break"] },
-        { month: "January 2027", events: ["School Reopens", "Republic Day Celebration"] },
-        { month: "February 2027", events: ["Final Examinations (Classes 9 & 11)"] },
-        { month: "March 2027", events: ["Final Examinations (Classes 1-8)", "Result Declaration"] }
+        { month: "April 2026", badge: "Session Commencement", events: ["New Academic Session 2026-27 Begins", "World Health Day Assembly & Wellness Pledge", "Earth Day Poster Making Competition"] },
+        { month: "May 2026", badge: "Assessments & Mother's Day", events: ["Summer Camp & Hobby Clubs Start", "Unit Test 1 (Classes VI - X)", "Mother's Day Special Assembly & Card Making"] },
+        { month: "June 2026", badge: "Summer Recess", events: ["Summer Vacation for Students", "International Yoga Day Workshop", "Faculty Pedagogical Development Webinars"] },
+        { month: "July 2026", badge: "Investiture Ceremony", events: ["School Reopens after Summer Break", "Student Council Elections & Investiture Ceremony", "Inter-House Debate & Science Model Exhibition"] },
+        { month: "August 2026", badge: "National Pride", events: ["79th Independence Day Grand Celebration", "Raksha Bandhan Craft Workshop", "Janmashtami & Samarpan Cultural Gala"] },
+        { month: "September 2026", badge: "Mid-Term Exams", events: ["Teacher's Day Tributes by Senior Students", "Half-Yearly / Term-1 Board Mock Examinations", "Hindi Diwas Elocution Competition"] },
+        { month: "October 2026", badge: "Festivals & Sports", events: ["Gandhi Jayanti Assembly", "Diwali Utsav, Rangoli & Diya Decoration", "Annual Inter-House Sports & Badminton Meet"] },
+        { month: "November 2026", badge: "Children's Day", events: ["Children's Day Carnival & Food Stalls", "Annual Science & Computer AI Exhibition", "Guru Nanak Jayanti Observance"] },
+        { month: "December 2026", badge: "Pre-Boards", events: ["CBSE Pre-Board Examinations (Classes X & XII)", "Winter Carnival & Art Showcase", "Christmas & Winter Break Begins"] },
+        { month: "January 2027", badge: "Republic Day", events: ["School Reopens", "Republic Day Flag Hoisting & Patriotic Drill", "Second Pre-Board Exam Series"] },
+        { month: "February 2027", badge: "Final Exams", events: ["CBSE Main Board Practicals & Vivas", "Final Annual Examinations (Classes IX & XI)", "Blessing & Farewell Ceremony for Class XII"] },
+        { month: "March 2027", badge: "Annual Result Day", events: ["Final Examinations (Classes Pre-Nursery to VIII)", "Annual Result Declaration & Prize Distribution", "New Session Book & Uniform Distribution"] }
     ];
 
     return (
-        <div className="container page-content">
-            <h1>School Calendar 2026-27</h1>
-            <p>A tentative schedule of academic and co-curricular activities for the current session.</p>
-
-            <div className="calendar-timeline" style={{ position: 'relative', maxWidth: '800px', margin: '3rem auto' }}>
-                {events.map((item, index) => (
-                    <div key={index} className="timeline-item glass" style={{ marginBottom: '2rem', padding: '1.5rem', borderRadius: '8px', borderLeft: '4px solid var(--color-secondary)', marginLeft: index % 2 === 0 ? '0' : 'auto', marginRight: index % 2 !== 0 ? '0' : 'auto' }}>
-                        <h3 style={{ color: 'var(--color-primary)', marginBottom: '0.5rem' }}>{item.month}</h3>
-                        <ul style={{ paddingLeft: '1.2rem', margin: 0 }}>
-                            {item.events.map((event, idx) => (
-                                <li key={idx} style={{ marginBottom: '0.25rem' }}>{event}</li>
-                            ))}
-                        </ul>
+        <div className="calendar-page-container">
+            {/* --- GURUKUL GRAND HEADER --- */}
+            <div className="gurukul-page-header">
+                <div className="container">
+                    <div className="gurukul-header-content">
+                        <span className="gurukul-kicker">✦ ACADEMIC PLANNER 2026-27 ✦</span>
+                        <h1 className="gurukul-page-title">Annual Academic & Activity Calendar</h1>
+                        <div className="gurukul-gold-divider">
+                            <span className="divider-line"></span>
+                            <span className="divider-icon">📅</span>
+                            <span className="divider-line"></span>
+                        </div>
+                        <p className="gurukul-header-desc">
+                            A comprehensive timeline of examinations, national holidays, cultural celebrations, sports galas, and parent-teacher orientations.
+                        </p>
                     </div>
-                ))}
+                </div>
             </div>
 
-            <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-                <a href="#" className="btn btn-primary">Download Full Calendar (PDF)</a>
+            <div className="container" style={{ padding: '3.5rem 1rem 5rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1.8rem' }}>
+                    {events.map((item, index) => (
+                        <div
+                            key={index}
+                            className="facility-spotlight-card"
+                            style={{
+                                padding: '1.8rem',
+                                background: '#ffffff',
+                                borderTop: '4px solid #0B2545',
+                                transition: 'all 0.3s ease',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'space-between'
+                            }}
+                        >
+                            <div>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
+                                    <h3 style={{ fontFamily: 'var(--font-family-heading)', color: '#0B2545', margin: 0, fontSize: '1.25rem' }}>
+                                        {item.month}
+                                    </h3>
+                                    <span className="stage-panel-badge" style={{ margin: 0, fontSize: '0.72rem' }}>
+                                        {item.badge}
+                                    </span>
+                                </div>
+                                <ul className="facility-features-list" style={{ marginTop: '1rem', marginBottom: 0 }}>
+                                    {item.events.map((event, idx) => (
+                                        <li key={idx} style={{ fontSize: '0.88rem', color: '#334155' }}>
+                                            <span className="check-bullet">✦</span>
+                                            <span>{event}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
+                    <Link to="/downloads" className="btn btn-primary" style={{ padding: '0.9rem 2.2rem' }}>
+                        <span>Download Full Academic Circular (PDF)</span>
+                        <i className="fa-solid fa-download"></i>
+                    </Link>
+                </div>
             </div>
         </div>
     );
