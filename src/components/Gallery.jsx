@@ -266,7 +266,8 @@ const Gallery = () => {
                                         <p className="album-subtitle">{album.sampleTitle}</p>
                                     </div>
                                     <button className="album-open-btn">
-                                        View Album &rarr;
+                                        <span>View Album</span>
+                                        <i className="fa-solid fa-arrow-right-long link-arrow"></i>
                                     </button>
                                 </div>
                             </div>

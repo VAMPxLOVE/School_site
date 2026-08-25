@@ -242,7 +242,8 @@ const FloatingSideDock = () => {
 
                                 <div className="modal-footer-actions">
                                     <button type="submit" className="btn-modal-submit">
-                                        Submit Admission Enquiry &rarr;
+                                        <span>Submit Admission Enquiry</span>
+                                        <i className="fa-solid fa-arrow-right-long link-arrow"></i>
                                     </button>
                                     <button
                                         type="button"

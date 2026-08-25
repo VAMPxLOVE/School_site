@@ -78,7 +78,10 @@ const Academics = () => {
                                         <li><span>✓</span> Interactive Rhymes & Stories</li>
                                         <li><span>✓</span> Safe Indoor Play Zone</li>
                                     </ul>
-                                    <Link to="/admissions" className="wing-link">Apply for Foundation &rarr;</Link>
+                                    <Link to="/admissions" className="wing-link">
+                                        <span>Apply for Foundation</span>
+                                        <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -97,7 +100,10 @@ const Academics = () => {
                                         <li><span>✓</span> Music, Fine Arts & Dance</li>
                                         <li><span>✓</span> Individual Student Mentoring</li>
                                     </ul>
-                                    <Link to="/downloads" className="wing-link">Download Syllabus &rarr;</Link>
+                                    <Link to="/downloads" className="wing-link">
+                                        <span>Download Syllabus</span>
+                                        <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -116,7 +122,10 @@ const Academics = () => {
                                         <li><span>✓</span> Student Council Leadership</li>
                                         <li><span>✓</span> Inter-House Championships</li>
                                     </ul>
-                                    <Link to="/gallery" className="wing-link">View Lab Photos &rarr;</Link>
+                                    <Link to="/gallery" className="wing-link">
+                                        <span>View Lab Photos</span>
+                                        <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -135,7 +144,10 @@ const Academics = () => {
                                         <li><span>✓</span> Pre-Board Mock Exam Series</li>
                                         <li><span>✓</span> Career Counseling & Seminars</li>
                                     </ul>
-                                    <Link to="/results" className="wing-link">Check Class X Merit &rarr;</Link>
+                                    <Link to="/results" className="wing-link">
+                                        <span>Check Class X Merit</span>
+                                        <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

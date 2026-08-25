@@ -104,8 +104,9 @@ const Navigation = () => {
 
                         {/* About Us Dropdown */}
                         <li className={`nav-item dropdown ${isParentActive(['/about', '/founder', '/vision', '/mission', '/faculty']) ? 'active' : ''}`}>
-                            <Link to="/about" className="nav-link">
-                                About Us <span className="dropdown-arrow">▾</span>
+                            <Link to="/about" className="nav-link nav-dropdown-toggle">
+                                <span>About Us</span>
+                                <i className="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
                             </Link>
                             <ul className="dropdown-content">
                                 <li>
@@ -138,8 +139,9 @@ const Navigation = () => {
 
                         {/* Academics Dropdown */}
                         <li className={`nav-item dropdown ${isParentActive(['/academics', '/calendar', '/conduct', '/downloads']) ? 'active' : ''}`}>
-                            <Link to="/academics" className="nav-link">
-                                Academics <span className="dropdown-arrow">▾</span>
+                            <Link to="/academics" className="nav-link nav-dropdown-toggle">
+                                <span>Academics</span>
+                                <i className="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
                             </Link>
                             <ul className="dropdown-content">
                                 <li>
@@ -181,8 +183,9 @@ const Navigation = () => {
 
                         {/* Student Zone Dropdown */}
                         <li className={`nav-item dropdown ${isParentActive(['/results', '/notices']) ? 'active' : ''}`}>
-                            <Link to="/notices" className="nav-link">
-                                Student Zone <span className="dropdown-arrow">▾</span>
+                            <Link to="/notices" className="nav-link nav-dropdown-toggle">
+                                <span>Student Zone</span>
+                                <i className="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
                             </Link>
                             <ul className="dropdown-content">
                                 <li>

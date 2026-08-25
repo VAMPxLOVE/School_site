@@ -231,10 +231,10 @@ const Home = () => {
 
                     {/* Slider Arrows */}
                     <button className="slider-nav-btn prev" onClick={prevSlide} aria-label="Previous Slide">
-                        &#10094;
+                        <i className="fa-solid fa-chevron-left"></i>
                     </button>
                     <button className="slider-nav-btn next" onClick={nextSlide} aria-label="Next Slide">
-                        &#10095;
+                        <i className="fa-solid fa-chevron-right"></i>
                     </button>
 
                     {/* Slider Pagination Dots */}
@@ -266,28 +266,40 @@ const Home = () => {
                             <div className="pillar-icon">🏫</div>
                             <h3 className="pillar-title">Modern Infrastructure</h3>
                             <p className="pillar-desc">Smart digital classrooms, state-of-the-art science wet labs & computer centers.</p>
-                            <Link to="/gallery" className="pillar-link">Explore Campus &rarr;</Link>
+                            <Link to="/gallery" className="pillar-link">
+                                <span>Explore Campus</span>
+                                <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                            </Link>
                         </div>
 
                         <div className="pillar-card">
                             <div className="pillar-icon">🎓</div>
                             <h3 className="pillar-title">Academic Distinction</h3>
                             <p className="pillar-desc">CBSE-aligned curriculum with continuous evaluation, smart boards & experienced faculty.</p>
-                            <Link to="/academics" className="pillar-link">View Academics &rarr;</Link>
+                            <Link to="/academics" className="pillar-link">
+                                <span>View Academics</span>
+                                <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                            </Link>
                         </div>
 
                         <div className="pillar-card">
                             <div className="pillar-icon">⚽</div>
                             <h3 className="pillar-title">Sports & Athletics</h3>
                             <p className="pillar-desc">Badminton, chess, carrom championships, courtyard games, and physical endurance.</p>
-                            <Link to="/gallery" className="pillar-link">Sports Life &rarr;</Link>
+                            <Link to="/gallery" className="pillar-link">
+                                <span>Sports Life</span>
+                                <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                            </Link>
                         </div>
 
                         <div className="pillar-card">
                             <div className="pillar-icon">🎵</div>
                             <h3 className="pillar-title">Music & Cultural Arts</h3>
                             <p className="pillar-desc">Instrumental keyboard, guitar studios, theatre, classical dance, and annual galas.</p>
-                            <Link to="/gallery" className="pillar-link">Cultural Arts &rarr;</Link>
+                            <Link to="/gallery" className="pillar-link">
+                                <span>Cultural Arts</span>
+                                <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -428,7 +440,8 @@ const Home = () => {
                                         <i className="fa-solid fa-arrow-right"></i>
                                     </Link>
                                     <Link to="/academics" className="btn btn-glass">
-                                        Detailed Syllabus &rarr;
+                                        <span>Detailed Syllabus</span>
+                                        <i className="fa-solid fa-arrow-right-long link-arrow"></i>
                                     </Link>
                                 </div>
                             </div>
@@ -577,7 +590,10 @@ const Home = () => {
                             <div className="happening-body">
                                 <h3 className="happening-title">Diwali Rangoli & Craft Competitions</h3>
                                 <p className="happening-text">Students showcasing traditional artistry, clay diya painting, and festive joy.</p>
-                                <Link to="/gallery" className="happening-link">View in Gallery &rarr;</Link>
+                                <Link to="/gallery" className="happening-link">
+                                    <span>View in Gallery</span>
+                                    <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                                </Link>
                             </div>
                         </div>
 
@@ -590,7 +606,10 @@ const Home = () => {
                             <div className="happening-body">
                                 <h3 className="happening-title">Student Council & House Prefects</h3>
                                 <p className="happening-text">Democracy in action fostering integrity, responsibility, and student leadership.</p>
-                                <Link to="/gallery" className="happening-link">View in Gallery &rarr;</Link>
+                                <Link to="/gallery" className="happening-link">
+                                    <span>View in Gallery</span>
+                                    <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                                </Link>
                             </div>
                         </div>
 
@@ -603,7 +622,10 @@ const Home = () => {
                             <div className="happening-body">
                                 <h3 className="happening-title">Inter-House Sports Tournament</h3>
                                 <p className="happening-text">Thrilling badminton rallies, chess championships, and carrom tournaments.</p>
-                                <Link to="/gallery" className="happening-link">View in Gallery &rarr;</Link>
+                                <Link to="/gallery" className="happening-link">
+                                    <span>View in Gallery</span>
+                                    <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                                </Link>
                             </div>
                         </div>
 
@@ -616,14 +638,17 @@ const Home = () => {
                             <div className="happening-body">
                                 <h3 className="happening-title">Annual Result Day & Honors</h3>
                                 <p className="happening-text">Celebrating academic distinction, class toppers on the podium, and merit certificates.</p>
-                                <Link to="/gallery" className="happening-link">View in Gallery &rarr;</Link>
+                                <Link to="/gallery" className="happening-link">
+                                    <span>View in Gallery</span>
+                                    <i className="fa-solid fa-arrow-right-long link-arrow"></i>
+                                </Link>
                             </div>
                         </div>
                     </div>
 
                     <div style={{ textAlign: 'center', marginTop: '3rem' }}>
                         <Link to="/gallery" className="btn btn-primary" style={{ padding: '0.9rem 2.5rem', fontSize: '1rem' }}>
-                            <span>Explore Full School Gallery (60+ Photos)</span>
+                            <span>Explore Full School Gallery (140+ Photos)</span>
                             <i className="fa-solid fa-arrow-right"></i>
                         </Link>
                     </div>
