@@ -28,11 +28,13 @@ import WelcomeScreen from './components/WelcomeScreen';
 import Faculty from './components/Faculty';
 import Chatbot from './components/Chatbot';
 import FloatingSideDock from './components/FloatingSideDock';
+import BackgroundMusic from './components/BackgroundMusic';
 
 function App() {
     return (
         <Router>
             <WelcomeScreen />
+            <BackgroundMusic />
             <div id="app-container" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
                 <Navigation />
                 <main id="main-content" style={{ flexGrow: 1 }}>

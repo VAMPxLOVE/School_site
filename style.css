@@ -4754,6 +4754,130 @@ body::before {
 }
 
 /* ==========================================================================
+   8. AMBIENT BACKGROUND MUSIC CONTROLLER WIDGET
+   ========================================================================== */
+.bg-music-floating-widget {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 999;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bg-music-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(11, 37, 69, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 0.55rem 0.85rem 0.55rem 0.95rem;
+    border-radius: 999px;
+    border: 1.5px solid rgba(218, 165, 32, 0.6);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 15px rgba(218, 165, 32, 0.2);
+}
+
+.bg-music-floating-widget:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* Sound Wave Equalizer */
+.music-equalizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 2.5px;
+    height: 18px;
+    width: 18px;
+}
+
+.eq-bar {
+    width: 3px;
+    background: #DAA520;
+    border-radius: 999px;
+    height: 4px;
+    transition: height 0.2s ease;
+}
+
+.music-equalizer.active .eq-1 {
+    animation: eqBounce 0.8s ease-in-out infinite alternate;
+}
+.music-equalizer.active .eq-2 {
+    animation: eqBounce 1.1s ease-in-out infinite alternate 0.2s;
+}
+.music-equalizer.active .eq-3 {
+    animation: eqBounce 0.7s ease-in-out infinite alternate 0.4s;
+}
+.music-equalizer.active .eq-4 {
+    animation: eqBounce 0.9s ease-in-out infinite alternate 0.1s;
+}
+
+@keyframes eqBounce {
+    0% { height: 4px; }
+    100% { height: 18px; }
+}
+
+.music-equalizer.paused .eq-bar {
+    height: 3px;
+    opacity: 0.5;
+}
+
+.music-label-wrap {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    user-select: none;
+}
+
+.music-tag-kicker {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #DAA520;
+    letter-spacing: 0.08em;
+    line-height: 1;
+}
+
+.music-title-text {
+    font-size: 0.76rem;
+    color: #F8FAFC;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 2px;
+}
+
+.music-mute-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(218, 165, 32, 0.4);
+    color: #ffffff;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.music-mute-btn:hover {
+    background: #DAA520;
+    color: #001f3f;
+    border-color: #ffffff;
+}
+
+.music-mute-btn.muted {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.5);
+    color: #FCA5A5;
+}
+
+.music-mute-btn.muted:hover {
+    background: #EF4444;
+    color: #ffffff;
+}
+
+/* ==========================================================================
    7. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 1024px) {
