@@ -9,13 +9,13 @@ const WelcomeScreen = () => {
 
     useEffect(() => {
         if (visible) {
-            // Start exit animation after 8 seconds
+            // Start exit animation after 0.5 seconds
             const timer = setTimeout(() => {
                 setExiting(true);
-                // Remove from DOM after animation completes
-                setTimeout(() => setVisible(false), 1200);
+                // Remove from DOM after transition completes
+                setTimeout(() => setVisible(false), 400);
                 sessionStorage.setItem('hasVisited', 'true');
-            }, 8000);
+            }, 500);
 
             return () => clearTimeout(timer);
         }
