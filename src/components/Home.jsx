@@ -63,7 +63,7 @@ const Home = () => {
             gradeBadge: 'PRE-NURSERY TO KG',
             title: 'Foundational Wing (Early Childhood)',
             desc: 'A joyful, play-integrated learning sanctuary structured around phonics, sensory exploration, motor skills, and creative storytelling.',
-            image: '/assets/gallery/campus/school_campus_front.jpg',
+            image: '/assets/gallery/campus/Park.jpeg',
             highlights: [
                 'Activity-based sensory & phonics curriculum',
                 'Safe, vibrant indoor interactive play arena',
@@ -80,7 +80,7 @@ const Home = () => {
             gradeBadge: 'CLASSES I - V',
             title: 'Primary Wing (Preparatory Years)',
             desc: 'Building rock-solid literacy, numeracy, logical reasoning, and ethical mindfulness through experiential classroom projects.',
-            image: '/assets/gallery/cooking/cooking_activity_board.jpg',
+            image: '/assets/gallery/cooking/WhatsApp Image 2026-08-25 at 1.57.07 AM (1).jpeg',
             highlights: [
                 'Interactive smart digital board enabled classrooms',
                 'Hands-on experimental science and math labs',
@@ -97,7 +97,7 @@ const Home = () => {
             gradeBadge: 'CLASSES VI - VIII',
             title: 'Middle Wing (Exploratory Stage)',
             desc: 'Deepening analytical inquiry, independent research, computational thinking, science practicals, and inter-house competitive sports leagues.',
-            image: '/assets/gallery/sports/sports_interhouse_badminton.jpg',
+            image: '/assets/gallery/council/WhatsApp Image 2026-08-25 at 2.15.28 AM (1).jpeg',
             highlights: [
                 'Subject-specialist faculty and advanced sciences',
                 'Student Council & House Prefect leadership roles',
@@ -114,7 +114,7 @@ const Home = () => {
             gradeBadge: 'CLASSES IX - X',
             title: 'Secondary Wing (CBSE Board Preparation)',
             desc: 'Rigorous CBSE Class X Board exam preparation, personalized academic mentorship, laboratory distinction, and foundational career readiness.',
-            image: '/assets/gallery/results/annual_result_top_rankers.jpg',
+            image: '/assets/gallery/results/WhatsApp Image 2026-08-25 at 2.02.46 AM.jpeg',
             highlights: [
                 '100% CBSE Class X Board Pass Rate & merit scholarship accolades',
                 'Comprehensive Science, Mathematics, Social & Language coaching',
@@ -249,9 +249,11 @@ const Home = () => {
                         ))}
                     </div>
                 </div>
+            </section>
 
-                {/* News & Circulars Ticker Bar */}
-                <div className="hero-notice-bar">
+            {/* --- NEWS & CIRCULARS STANDALONE TICKER STRIP --- */}
+            <section className="home-notice-strip-section">
+                <div className="container">
                     <NoticeBoard />
                 </div>
             </section>

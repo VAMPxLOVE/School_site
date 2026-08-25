@@ -1,45 +1,59 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { API_BASE_URL } from '../config';
 
+const defaultNotices = [
+    { title: "Admissions Open for Session 2026-27 (Pre-Nursery to Class X) — Apply Online or Visit Campus Office", date: "2026-08-25", link: "/admissions" },
+    { title: "CBSE Annual Academic Calendar 2026-27 & Examination Schedule is now published", date: "2026-08-20", link: "/calendar" },
+    { title: "Inter-House Badminton, Chess & Cultural Gala Schedule Announced", date: "2026-08-18", link: "/gallery" },
+    { title: "Parent-Teacher Interaction & Progress Review Meeting Notification", date: "2026-08-15", link: "/contact" }
+];
+
 const NoticeBoard = () => {
-    const [notices, setNotices] = useState([]);
+    const [notices, setNotices] = useState(defaultNotices);
 
     useEffect(() => {
         const fetchNotices = async () => {
             try {
                 const res = await fetch(`${API_BASE_URL}/api/notices`);
-                const data = await res.json();
-                if (data.data) {
-                    setNotices(data.data);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.data && data.data.length > 0) {
+                        setNotices(data.data);
+                    }
                 }
             } catch (err) {
-                console.error("Failed to fetch notices for ticker", err);
+                // Keep default notices
             }
         };
         fetchNotices();
     }, []);
 
     return (
-        <div className="notice-board-container">
-            <div className="notice-header">NOTICE BOARD</div>
-            <div className="notice-ticker">
-                <ul className="notice-list">
-                    {notices.length > 0 ? (
-                        notices.map((notice, index) => (
-                            <li key={index}>
-                                <span style={{ color: '#FFD700' }}>★</span> {notice.title} - {notice.date.split('-').reverse().join('/')}
-                                {notice.filePath &&
-                                    <span style={{ marginLeft: '5px', fontSize: '0.8em', background: 'white', color: 'blue', padding: '2px 5px', borderRadius: '3px' }}>
-                                        PDF
-                                    </span>
-                                }
-                            </li>
-                        ))
-                    ) : (
-                        <li>Loading latest updates...</li>
-                    )}
+        <div className="gurukul-notice-wrapper">
+            <div className="notice-badge-label">
+                <span className="notice-pulse-icon">📢</span>
+                <span className="notice-label-text">CIRCULARS & NOTICES</span>
+            </div>
+            <div className="notice-ticker-track">
+                <ul className="notice-list-items">
+                    {notices.map((notice, index) => (
+                        <li key={index} className="notice-item-node">
+                            <span className="notice-star">✦</span>
+                            {notice.link ? (
+                                <Link to={notice.link} className="notice-link-anchor">
+                                    {notice.title}
+                                </Link>
+                            ) : (
+                                <span className="notice-text-span">{notice.title}</span>
+                            )}
+                            {notice.filePath && (
+                                <a href={notice.filePath} target="_blank" rel="noreferrer" className="notice-pdf-chip">
+                                    PDF
+                                </a>
+                            )}
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>
