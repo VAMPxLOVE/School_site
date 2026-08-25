@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const galleryData = fs.readFileSync('src/data/galleryData.js', 'utf8');
-const regex = /src:\s*['"]([^'"]+)['"]/g;
+const regex = /"src":\s*"([^"]+)"/g;
 let match;
 const missing = [];
 const found = [];
@@ -18,7 +18,6 @@ while ((match = regex.exec(galleryData)) !== null) {
 console.log('EXISTING IN GALLERYDATA:', found.length);
 console.log('MISSING IN GALLERYDATA:', missing);
 
-// List all files in public/assets/gallery
 function walk(dir) {
     let results = [];
     const list = fs.readdirSync(dir);
@@ -42,4 +41,7 @@ const unused = allGalleryImages.filter(img => {
     return !found.includes(webPath);
 });
 
-console.log('UNUSED ON DISK:', unused);
+console.log('UNUSED ON DISK count:', unused.length);
+if (unused.length > 0) {
+    console.log('Unused files:', unused);
+}
