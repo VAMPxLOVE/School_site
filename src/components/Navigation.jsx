@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
     const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
 
@@ -19,13 +20,28 @@ const Navigation = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Close mobile menu on route change
+    // Close mobile menu and collapse dropdowns on route change
     useEffect(() => {
         setIsMobileMenuOpen(false);
+        setOpenMobileDropdown(null);
     }, [location.pathname]);
 
     const isActive = (path) => location.pathname === path;
     const isParentActive = (paths) => paths.some(p => location.pathname === p);
+
+    const handleDropdownToggle = (e, menuName) => {
+        // On mobile screen widths, toggle accordion sub-menu
+        if (window.innerWidth <= 1024) {
+            e.preventDefault();
+            e.stopPropagation();
+            setOpenMobileDropdown(prev => prev === menuName ? null : menuName);
+        }
+    };
+
+    const handleLinkClick = () => {
+        setIsMobileMenuOpen(false);
+        setOpenMobileDropdown(null);
+    };
 
     return (
         <header className={`site-header ${isScrolled ? 'header-scrolled' : ''}`}>
@@ -46,16 +62,16 @@ const Navigation = () => {
                         </a>
                     </div>
                     <div className="top-bar-right">
-                        <Link to="/calendar" className="top-bar-link-pill hide-mobile">
+                        <Link to="/calendar" onClick={handleLinkClick} className="top-bar-link-pill hide-mobile">
                             <i className="fa-regular fa-calendar-days"></i> Calendar
                         </Link>
-                        <Link to="/downloads" className="top-bar-link-pill hide-mobile">
+                        <Link to="/downloads" onClick={handleLinkClick} className="top-bar-link-pill hide-mobile">
                             <i className="fa-solid fa-file-arrow-down"></i> Circulars
                         </Link>
-                        <Link to="/admissions" className="top-bar-badge badge-pulse">
+                        <Link to="/admissions" onClick={handleLinkClick} className="top-bar-badge badge-pulse">
                             <span className="sparkle-icon">✨</span> Admissions 2026-27 Open
                         </Link>
-                        <Link to="/login" className="top-bar-btn">
+                        <Link to="/login" onClick={handleLinkClick} className="top-bar-btn">
                             <i className="fa-solid fa-user-lock"></i> ERP Login
                         </Link>
                     </div>
@@ -66,7 +82,7 @@ const Navigation = () => {
             <nav className="main-navbar">
                 <div className="container navbar-content">
                     {/* Brand Crest & Title */}
-                    <Link to="/" className="brand-logo">
+                    <Link to="/" onClick={handleLinkClick} className="brand-logo">
                         <div className="brand-logo-frame">
                             <img
                                 src="/assets/logo.jpg"
@@ -89,48 +105,55 @@ const Navigation = () => {
                         aria-label="Toggle navigation menu"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span className="bar bar-1"></span>
+                        <span className="bar bar-2"></span>
+                        <span className="bar bar-3"></span>
                     </button>
 
                     {/* Navigation Menu Tabs */}
                     <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
                         <li className="nav-item">
-                            <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
+                            <Link to="/" onClick={handleLinkClick} className={`nav-link ${isActive('/') ? 'active' : ''}`}>
                                 Home
                             </Link>
                         </li>
 
                         {/* About Us Dropdown */}
-                        <li className={`nav-item dropdown ${isParentActive(['/about', '/founder', '/vision', '/mission', '/faculty']) ? 'active' : ''}`}>
-                            <Link to="/about" className="nav-link nav-dropdown-toggle">
-                                <span>About Us</span>
-                                <i className="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
-                            </Link>
-                            <ul className="dropdown-content">
+                        <li className={`nav-item dropdown ${openMobileDropdown === 'about' ? 'mobile-expanded' : ''} ${isParentActive(['/about', '/founder', '/vision', '/mission', '/faculty']) ? 'active' : ''}`}>
+                            <div
+                                className="nav-link nav-dropdown-toggle"
+                                onClick={(e) => handleDropdownToggle(e, 'about')}
+                                role="button"
+                                tabIndex={0}
+                            >
+                                <Link to="/about" onClick={(e) => { if (window.innerWidth <= 1024) { e.preventDefault(); handleDropdownToggle(e, 'about'); } else { handleLinkClick(); } }} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    <span>About Us</span>
+                                </Link>
+                                <i className={`fa-solid fa-chevron-down nav-dropdown-arrow ${openMobileDropdown === 'about' ? 'rotated' : ''}`}></i>
+                            </div>
+                            <ul className={`dropdown-content ${openMobileDropdown === 'about' ? 'show-mobile' : ''}`}>
                                 <li>
-                                    <Link to="/about" className={isActive('/about') ? 'active' : ''}>
+                                    <Link to="/about" onClick={handleLinkClick} className={isActive('/about') ? 'active' : ''}>
                                         <i className="fa-solid fa-school"></i> About Institution
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/founder" className={isActive('/founder') ? 'active' : ''}>
+                                    <Link to="/founder" onClick={handleLinkClick} className={isActive('/founder') ? 'active' : ''}>
                                         <i className="fa-solid fa-feather"></i> Founder's Desk
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/vision" className={isActive('/vision') ? 'active' : ''}>
+                                    <Link to="/vision" onClick={handleLinkClick} className={isActive('/vision') ? 'active' : ''}>
                                         <i className="fa-regular fa-eye"></i> Vision & Goals
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/mission" className={isActive('/mission') ? 'active' : ''}>
+                                    <Link to="/mission" onClick={handleLinkClick} className={isActive('/mission') ? 'active' : ''}>
                                         <i className="fa-solid fa-bullseye"></i> Mission & Values
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/faculty" className={isActive('/faculty') ? 'active' : ''}>
+                                    <Link to="/faculty" onClick={handleLinkClick} className={isActive('/faculty') ? 'active' : ''}>
                                         <i className="fa-solid fa-chalkboard-user"></i> Dedicated Faculty
                                     </Link>
                                 </li>
@@ -138,29 +161,36 @@ const Navigation = () => {
                         </li>
 
                         {/* Academics Dropdown */}
-                        <li className={`nav-item dropdown ${isParentActive(['/academics', '/calendar', '/conduct', '/downloads']) ? 'active' : ''}`}>
-                            <Link to="/academics" className="nav-link nav-dropdown-toggle">
-                                <span>Academics</span>
-                                <i className="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
-                            </Link>
-                            <ul className="dropdown-content">
+                        <li className={`nav-item dropdown ${openMobileDropdown === 'academics' ? 'mobile-expanded' : ''} ${isParentActive(['/academics', '/calendar', '/conduct', '/downloads']) ? 'active' : ''}`}>
+                            <div
+                                className="nav-link nav-dropdown-toggle"
+                                onClick={(e) => handleDropdownToggle(e, 'academics')}
+                                role="button"
+                                tabIndex={0}
+                            >
+                                <Link to="/academics" onClick={(e) => { if (window.innerWidth <= 1024) { e.preventDefault(); handleDropdownToggle(e, 'academics'); } else { handleLinkClick(); } }} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    <span>Academics</span>
+                                </Link>
+                                <i className={`fa-solid fa-chevron-down nav-dropdown-arrow ${openMobileDropdown === 'academics' ? 'rotated' : ''}`}></i>
+                            </div>
+                            <ul className={`dropdown-content ${openMobileDropdown === 'academics' ? 'show-mobile' : ''}`}>
                                 <li>
-                                    <Link to="/academics" className={isActive('/academics') ? 'active' : ''}>
-                                        <i className="fa-solid fa-book-open-reader"></i> Curriculum Stages
+                                    <Link to="/academics" onClick={handleLinkClick} className={isActive('/academics') ? 'active' : ''}>
+                                        <i className="fa-solid fa-book-open-reader"></i> Curriculum Stages (Upto X)
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/calendar" className={isActive('/calendar') ? 'active' : ''}>
+                                    <Link to="/calendar" onClick={handleLinkClick} className={isActive('/calendar') ? 'active' : ''}>
                                         <i className="fa-regular fa-calendar"></i> School Calendar
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/conduct" className={isActive('/conduct') ? 'active' : ''}>
+                                    <Link to="/conduct" onClick={handleLinkClick} className={isActive('/conduct') ? 'active' : ''}>
                                         <i className="fa-solid fa-handshake-angle"></i> Parent Conduct Code
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/downloads" className={isActive('/downloads') ? 'active' : ''}>
+                                    <Link to="/downloads" onClick={handleLinkClick} className={isActive('/downloads') ? 'active' : ''}>
                                         <i className="fa-solid fa-download"></i> Download Center
                                     </Link>
                                 </li>
@@ -169,37 +199,44 @@ const Navigation = () => {
 
                         {/* Admissions */}
                         <li className="nav-item">
-                            <Link to="/admissions" className={`nav-link ${isActive('/admissions') ? 'active' : ''}`}>
+                            <Link to="/admissions" onClick={handleLinkClick} className={`nav-link ${isActive('/admissions') ? 'active' : ''}`}>
                                 Admissions
                             </Link>
                         </li>
 
                         {/* Campus Life & Gallery */}
                         <li className="nav-item">
-                            <Link to="/gallery" className={`nav-link ${isActive('/gallery') ? 'active' : ''}`}>
+                            <Link to="/gallery" onClick={handleLinkClick} className={`nav-link ${isActive('/gallery') ? 'active' : ''}`}>
                                 Gallery & Events
                             </Link>
                         </li>
 
                         {/* Student Zone Dropdown */}
-                        <li className={`nav-item dropdown ${isParentActive(['/results', '/notices']) ? 'active' : ''}`}>
-                            <Link to="/notices" className="nav-link nav-dropdown-toggle">
-                                <span>Student Zone</span>
-                                <i className="fa-solid fa-chevron-down nav-dropdown-arrow"></i>
-                            </Link>
-                            <ul className="dropdown-content">
+                        <li className={`nav-item dropdown ${openMobileDropdown === 'student-zone' ? 'mobile-expanded' : ''} ${isParentActive(['/results', '/notices']) ? 'active' : ''}`}>
+                            <div
+                                className="nav-link nav-dropdown-toggle"
+                                onClick={(e) => handleDropdownToggle(e, 'student-zone')}
+                                role="button"
+                                tabIndex={0}
+                            >
+                                <Link to="/results" onClick={(e) => { if (window.innerWidth <= 1024) { e.preventDefault(); handleDropdownToggle(e, 'student-zone'); } else { handleLinkClick(); } }} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    <span>Student Zone</span>
+                                </Link>
+                                <i className={`fa-solid fa-chevron-down nav-dropdown-arrow ${openMobileDropdown === 'student-zone' ? 'rotated' : ''}`}></i>
+                            </div>
+                            <ul className={`dropdown-content ${openMobileDropdown === 'student-zone' ? 'show-mobile' : ''}`}>
                                 <li>
-                                    <Link to="/results" className={isActive('/results') ? 'active' : ''}>
+                                    <Link to="/results" onClick={handleLinkClick} className={isActive('/results') ? 'active' : ''}>
                                         <i className="fa-solid fa-trophy"></i> CBSE Board Results
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/notices" className={isActive('/notices') ? 'active' : ''}>
+                                    <Link to="/notices" onClick={handleLinkClick} className={isActive('/notices') ? 'active' : ''}>
                                         <i className="fa-solid fa-bullhorn"></i> Notices & Circulars
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/downloads" className={isActive('/downloads') ? 'active' : ''}>
+                                    <Link to="/downloads" onClick={handleLinkClick} className={isActive('/downloads') ? 'active' : ''}>
                                         <i className="fa-solid fa-file-pdf"></i> Syllabus & Worksheets
                                     </Link>
                                 </li>
@@ -208,14 +245,14 @@ const Navigation = () => {
 
                         {/* Contact Us */}
                         <li className="nav-item">
-                            <Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>
+                            <Link to="/contact" onClick={handleLinkClick} className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>
                                 Contact Us
                             </Link>
                         </li>
 
                         {/* Royal CTA Apply Button */}
                         <li className="nav-cta-item">
-                            <Link to="/admissions" className="nav-btn-apply">
+                            <Link to="/admissions" onClick={handleLinkClick} className="nav-btn-apply">
                                 <span>Enquire Now</span>
                                 <i className="fa-solid fa-arrow-right"></i>
                             </Link>
