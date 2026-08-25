@@ -30,7 +30,7 @@ const Home = () => {
             secondaryLink: '/results'
         },
         {
-            image: '/assets/gallery/sports/sports_interhouse_team_assembly.jpg',
+            image: '/assets/gallery/sports/WhatsApp Image 2026-08-25 at 3.04.27 AM.jpeg',
             badge: '✦ HOLISTIC EXCELLENCE ✦',
             title: 'Celebrating Creativity, Sportsmanship & Moral Character',
             subtitle: 'Comprehensive co-curricular enrichment fostering instrumental music studios, track athletics, and cultural values',
@@ -152,7 +152,7 @@ const Home = () => {
             label: 'Music & Cultural Arts',
             title: 'Instrumental Music & Fine Arts Studio',
             desc: 'Dedicated creative studios with acoustic guitars, electronic keyboards, classical harmonium, tabla, and fine arts workspaces nurturing artistic genius.',
-            image: '/assets/gallery/campus/music_keyboard_class.jpg',
+            image: '/assets/gallery/campus/Music_Room_1.jpeg',
             points: ['Instrumental & vocal music coaching', 'Classical, folk & contemporary dance', 'Annual cultural festival spotlight']
         },
         {
@@ -584,7 +584,7 @@ const Home = () => {
                         {/* Card 1: Diwali Rangoli */}
                         <div className="happening-card">
                             <div className="happening-img-wrap">
-                                <img src="/assets/gallery/diwali/diwali_lakshmi_rangoli_team.jpg" alt="Diwali Celebrations" />
+                                <img src="/assets/gallery/diwali/WhatsApp Image 2026-08-25 at 2.58.05 AM (2).jpeg" alt="Diwali Celebrations" />
                                 <span className="happening-tag">Celebrations</span>
                             </div>
                             <div className="happening-body">
@@ -600,7 +600,7 @@ const Home = () => {
                         {/* Card 2: Student Council */}
                         <div className="happening-card">
                             <div className="happening-img-wrap">
-                                <img src="/assets/gallery/council/student_council_assembly.jpg" alt="Student Council Assembly" />
+                                <img src="/assets/gallery/council/WhatsApp Image 2026-08-25 at 2.15.28 AM.jpeg" alt="Student Council Assembly" />
                                 <span className="happening-tag">Leadership</span>
                             </div>
                             <div className="happening-body">
@@ -616,7 +616,7 @@ const Home = () => {
                         {/* Card 3: Sports Competition */}
                         <div className="happening-card">
                             <div className="happening-img-wrap">
-                                <img src="/assets/gallery/sports/sports_interhouse_badminton.jpg" alt="Inter-House Sports" />
+                                <img src="/assets/gallery/sports/WhatsApp Image 2026-08-25 at 2.59.36 AM.jpeg" alt="Inter-House Sports" />
                                 <span className="happening-tag">Sports & Games</span>
                             </div>
                             <div className="happening-body">
@@ -632,7 +632,7 @@ const Home = () => {
                         {/* Card 4: Result Day */}
                         <div className="happening-card">
                             <div className="happening-img-wrap">
-                                <img src="/assets/gallery/results/annual_result_top_rankers.jpg" alt="Annual Result Day" />
+                                <img src="/assets/gallery/results/WhatsApp Image 2026-08-25 at 2.02.45 AM.jpeg" alt="Annual Result Day" />
                                 <span className="happening-tag">Merit & Awards</span>
                             </div>
                             <div className="happening-body">
