@@ -9,7 +9,7 @@ const Downloads = () => {
                 { name: "Primary Syllabus (Classes 1-5)", url: "#" },
                 { name: "Middle School Syllabus (Classes 6-8)", url: "#" },
                 { name: "Secondary Curriculum (Classes 9-10)", url: "#" },
-                { name: "Senior Secondary Streams (Classes 11-12)", url: "#" }
+                { name: "CBSE Class X Board Sample Papers & Blueprints", url: "#" }
             ]
         },
         {

@@ -78,7 +78,7 @@ const Navigation = () => {
                             <span className="brand-title">D.R.P. CONVENT</span>
                             <span className="brand-subtitle">PUBLIC SCHOOL</span>
                             <span className="brand-tagline">
-                                <span className="gold-ornament">✦</span> AFFILIATED TO C.B.S.E., NEW DELHI (10+2) <span className="gold-ornament">✦</span>
+                                <span className="gold-ornament">✦</span> AFFILIATED TO C.B.S.E., NEW DELHI (UPTO CLASS X) <span className="gold-ornament">✦</span>
                             </span>
                         </div>
                     </Link>

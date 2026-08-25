@@ -11,9 +11,9 @@ const SchoolCalendar = () => {
         { month: "September 2026", badge: "Mid-Term Exams", events: ["Teacher's Day Tributes by Senior Students", "Half-Yearly / Term-1 Board Mock Examinations", "Hindi Diwas Elocution Competition"] },
         { month: "October 2026", badge: "Festivals & Sports", events: ["Gandhi Jayanti Assembly", "Diwali Utsav, Rangoli & Diya Decoration", "Annual Inter-House Sports & Badminton Meet"] },
         { month: "November 2026", badge: "Children's Day", events: ["Children's Day Carnival & Food Stalls", "Annual Science & Computer AI Exhibition", "Guru Nanak Jayanti Observance"] },
-        { month: "December 2026", badge: "Pre-Boards", events: ["CBSE Pre-Board Examinations (Classes X & XII)", "Winter Carnival & Art Showcase", "Christmas & Winter Break Begins"] },
-        { month: "January 2027", badge: "Republic Day", events: ["School Reopens", "Republic Day Flag Hoisting & Patriotic Drill", "Second Pre-Board Exam Series"] },
-        { month: "February 2027", badge: "Final Exams", events: ["CBSE Main Board Practicals & Vivas", "Final Annual Examinations (Classes IX & XI)", "Blessing & Farewell Ceremony for Class XII"] },
+        { month: "December 2026", badge: "Pre-Boards", events: ["CBSE Class X Pre-Board Examinations", "Winter Carnival & Art Showcase", "Christmas & Winter Break Begins"] },
+        { month: "January 2027", badge: "Republic Day", events: ["School Reopens", "Republic Day Flag Hoisting & Patriotic Drill", "Second Pre-Board Exam Series (Class X)"] },
+        { month: "February 2027", badge: "Final Exams", events: ["CBSE Class X Board Practicals & Vivas", "Final Annual Examinations (Class IX)", "Blessing & Farewell Ceremony for Outgoing Class X"] },
         { month: "March 2027", badge: "Annual Result Day", events: ["Final Examinations (Classes Pre-Nursery to VIII)", "Annual Result Declaration & Prize Distribution", "New Session Book & Uniform Distribution"] }
     ];
 

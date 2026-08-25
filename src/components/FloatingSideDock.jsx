@@ -225,10 +225,7 @@ const FloatingSideDock = () => {
                                         <option value="Class VII">Class VII</option>
                                         <option value="Class VIII">Class VIII</option>
                                         <option value="Class IX">Class IX</option>
-                                        <option value="Class X">Class X (Board)</option>
-                                        <option value="Class XI - Science">Class XI - Science Stream</option>
-                                        <option value="Class XI - Commerce">Class XI - Commerce Stream</option>
-                                        <option value="Class XII">Class XII (Senior Secondary)</option>
+                                        <option value="Class X">Class X (CBSE Board)</option>
                                     </select>
                                 </div>
 

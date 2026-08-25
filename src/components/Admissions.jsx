@@ -24,7 +24,7 @@ const Admissions = () => {
                             <span className="divider-line"></span>
                         </div>
                         <p className="gurukul-header-desc">
-                            Welcome to the D.R.P. Convent family. Explore our transparent, merit-oriented admissions process from Pre-Nursery to Senior Secondary (Class XII).
+                            Welcome to the D.R.P. Convent family. Explore our transparent, merit-oriented admissions process from Pre-Nursery to Secondary (Class X).
                         </p>
                     </div>
                 </div>
@@ -142,9 +142,9 @@ const Admissions = () => {
                                         <td>Middle School Stage</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Class IX & XI</strong></td>
-                                        <td>As per CBSE norms & past marksheet</td>
-                                        <td>Senior Secondary Stage</td>
+                                        <td><strong>Class IX & X</strong></td>
+                                        <td>As per CBSE norms & previous marksheet</td>
+                                        <td>Secondary Stage (CBSE Board)</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -215,10 +215,10 @@ const Admissions = () => {
                                             <select className="modal-select">
                                                 <option>Pre-Nursery / Nursery</option>
                                                 <option>K.G. / Class I</option>
-                                                <option>Class II - V</option>
-                                                <option>Class VI - VIII</option>
+                                                <option>Class II - V (Primary)</option>
+                                                <option>Class VI - VIII (Middle)</option>
                                                 <option>Class IX (Secondary)</option>
-                                                <option>Class XI (Science / Commerce)</option>
+                                                <option>Class X (CBSE Board)</option>
                                             </select>
                                         </div>
                                         <div className="modal-form-group">

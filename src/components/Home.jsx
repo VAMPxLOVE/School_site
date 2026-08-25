@@ -13,7 +13,7 @@ const Home = () => {
             image: '/assets/school_building.jpg',
             badge: '✦ ADMISSIONS OPEN 2026-27 ✦',
             title: 'Nurturing Future Leaders with Value-Based Education',
-            subtitle: 'D.R.P. Convent Public School — A Premier C.B.S.E. Affiliated Senior Secondary Institution in North-East Delhi',
+            subtitle: 'D.R.P. Convent Public School — A Premier C.B.S.E. Affiliated Secondary Institution (Pre-Nursery to Class X) in North-East Delhi',
             primaryBtnText: 'Apply For Admission',
             primaryLink: '/admissions',
             secondaryBtnText: 'Explore Campus Life',
@@ -108,18 +108,18 @@ const Home = () => {
             btnText: 'Middle School Overview'
         },
         {
-            id: 'senior',
+            id: 'secondary',
             icon: '🎓',
-            label: 'Senior Secondary',
-            gradeBadge: 'CLASSES IX - XII',
-            title: 'Senior Secondary Wing (Career & Board)',
-            desc: 'Rigorous CBSE Board exam preparation, personalized academic mentorship, career counseling, practical distinction, and collegiate readiness.',
+            label: 'Secondary Stage',
+            gradeBadge: 'CLASSES IX - X',
+            title: 'Secondary Wing (CBSE Board Preparation)',
+            desc: 'Rigorous CBSE Class X Board exam preparation, personalized academic mentorship, laboratory distinction, and foundational career readiness.',
             image: '/assets/gallery/results/annual_result_top_rankers.jpg',
             highlights: [
-                '100% Board Pass Rate & merit scholarship accolades',
-                'Well-equipped Science & Commerce stream tracks',
-                'Comprehensive practical lab assessments & mock tests',
-                'Higher education & competitive career counseling'
+                '100% CBSE Class X Board Pass Rate & merit scholarship accolades',
+                'Comprehensive Science, Mathematics, Social & Language coaching',
+                'Practical lab assessments, viva series & regular mock exams',
+                'Holistic career counseling & talent enrichment seminars'
             ],
             link: '/results',
             btnText: 'Explore Board Results'
@@ -337,7 +337,7 @@ const Home = () => {
                                     <span className="highlight-icon">✓</span>
                                     <div>
                                         <strong>100% Board Success & Merit Accolades</strong>
-                                        <p>Consistent academic distinctions in secondary and senior secondary examinations.</p>
+                                        <p>Consistent academic distinctions in CBSE Secondary Board (Class X) examinations.</p>
                                     </div>
                                 </div>
                                 <div className="legacy-highlight-item">
@@ -682,7 +682,7 @@ const Home = () => {
                             <span className="cta-kicker">ADMISSIONS OPEN FOR SESSION 2026-27</span>
                             <h2 className="cta-title">Begin Your Child's Journey to Leadership & Character</h2>
                             <p className="cta-desc">
-                                Limited seats available from Pre-Nursery to Class XII. Schedule a campus visit or register online today.
+                                Limited seats available from Pre-Nursery to Class X (10th Standard). Schedule a campus visit or register online today.
                             </p>
                         </div>
                         <div className="cta-banner-actions">

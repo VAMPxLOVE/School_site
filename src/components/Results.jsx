@@ -74,9 +74,12 @@ const Results = () => {
                                 style={{ width: '100%', padding: '0.75rem', border: '1px solid #ddd', borderRadius: '4px' }}
                             >
                                 <option value="">Select Class</option>
-                                <option value="X">Class X</option>
-                                <option value="XII">Class XII</option>
-                                {/* Add more options as needed or make it a text input if preferred */}
+                                <option value="X">Class X (CBSE Board)</option>
+                                <option value="IX">Class IX</option>
+                                <option value="VIII">Class VIII</option>
+                                <option value="VII">Class VII</option>
+                                <option value="VI">Class VI</option>
+                                <option value="V">Class V</option>
                             </select>
                         </div>
                         <div className="form-group">

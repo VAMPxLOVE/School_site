@@ -52,7 +52,7 @@ export const galleryImages = [
     {
         id: 9,
         category: 'farewell',
-        title: 'Class XII Farewell Dance & Memories',
+        title: 'Class X Outgoing Batch Farewell Dance & Memories',
         src: '/assets/gallery/farewell/farewell_celebration_dance.jpg'
     },
     {

@@ -120,22 +120,22 @@ const Academics = () => {
                                 </div>
                             </div>
 
-                            {/* Senior Secondary */}
+                            {/* Secondary Stage */}
                             <div className="wing-card">
                                 <div className="wing-header">
                                     <div className="wing-icon">🎓</div>
-                                    <span className="wing-grade-badge">CLASSES IX - XII</span>
-                                    <h3 className="wing-title">Senior Secondary Wing</h3>
+                                    <span className="wing-grade-badge">CLASSES IX - X</span>
+                                    <h3 className="wing-title">Secondary Wing</h3>
                                 </div>
                                 <div className="wing-body">
-                                    <p className="wing-desc">Rigorous CBSE Board preparation, career counseling, practical distinction, and collegiate readiness.</p>
+                                    <p className="wing-desc">Rigorous CBSE Class X Board exam preparation, concept mastery, laboratory practicals, and career mentorship.</p>
                                     <ul className="wing-features">
                                         <li><span>✓</span> 100% Board Success Track</li>
-                                        <li><span>✓</span> Science & Commerce Streams</li>
-                                        <li><span>✓</span> Comprehensive Mock Exams</li>
-                                        <li><span>✓</span> Career Counseling Seminars</li>
+                                        <li><span>✓</span> Science, Math & Tech Labs</li>
+                                        <li><span>✓</span> Pre-Board Mock Exam Series</li>
+                                        <li><span>✓</span> Career Counseling & Seminars</li>
                                     </ul>
-                                    <Link to="/results" className="wing-link">Check Board Merit &rarr;</Link>
+                                    <Link to="/results" className="wing-link">Check Class X Merit &rarr;</Link>
                                 </div>
                             </div>
                         </div>
@@ -161,9 +161,9 @@ const Academics = () => {
                                 <p className="feature-text">English Core, Hindi, Sanskrit literature, debate forums, creative writing, and public elocution.</p>
                             </div>
                             <div className="feature-box">
-                                <div className="feature-icon-circle">📈</div>
-                                <h3 className="feature-title">Commerce & Accountancy</h3>
-                                <p className="feature-text">Business Studies, Accountancy, Economics, Financial Literacy, and practical case study seminars.</p>
+                                <div className="feature-icon-circle">🌍</div>
+                                <h3 className="feature-title">Social Sciences & Civics</h3>
+                                <p className="feature-text">History, Geography, Political Science, Economics, environmental studies, and national heritage awareness.</p>
                             </div>
                             <div className="feature-box">
                                 <div className="feature-icon-circle">🎵</div>
@@ -198,7 +198,7 @@ const Academics = () => {
                                 <div className="milestone-item" style={{ background: '#ffffff', padding: '1.2rem', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
                                     <div>
                                         <h4 style={{ color: '#0B2545', margin: '0 0 0.4rem', fontSize: '1.05rem' }}>Term End & Pre-Board Examinations</h4>
-                                        <p style={{ margin: 0, fontSize: '0.88rem', color: '#64748B' }}>Rigorous mock test series simulating CBSE Board exam conditions for Classes X and XII.</p>
+                                        <p style={{ margin: 0, fontSize: '0.88rem', color: '#64748B' }}>Rigorous mock test series simulating CBSE Class X Board exam conditions.</p>
                                     </div>
                                 </div>
                                 <div className="milestone-item" style={{ background: '#ffffff', padding: '1.2rem', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
