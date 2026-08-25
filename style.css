@@ -4557,9 +4557,209 @@ body::before {
 }
 
 /* ==========================================================================
-   6. RESPONSIVE MEDIA QUERIES
+   6. GURUKUL DYNAMIC ANIMATIONS & VISUAL EFFECTS SUITE
+   ========================================================================== */
+
+/* 1. Slow Cinematic Ken Burns on Hero Slide Image */
+@keyframes heroKenBurns {
+    0% {
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.06);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+.hero-slide.active .hero-bg-img,
+.hero-slider-container .hero-slide img {
+    animation: heroKenBurns 14s ease-in-out infinite alternate;
+}
+
+/* 2. Golden Halo Pulse on Leadership Portraits & Badges */
+@keyframes goldHaloPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(218, 165, 32, 0.5), 0 12px 30px rgba(11, 37, 69, 0.2);
+    }
+    70% {
+        box-shadow: 0 0 0 16px rgba(218, 165, 32, 0), 0 16px 36px rgba(11, 37, 69, 0.25);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(218, 165, 32, 0), 0 12px 30px rgba(11, 37, 69, 0.2);
+    }
+}
+
+.principal-photo-frame {
+    animation: goldHaloPulse 3.5s infinite;
+}
+
+/* 3. Floating Animation for Badges & Heritage Elements */
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.heritage-floating-card {
+    animation: floatSlow 4s ease-in-out infinite;
+}
+
+.badge-pulse {
+    animation: floatSlow 3s ease-in-out infinite;
+}
+
+/* 4. Tab Panel Smooth Slide-Up & Fade-In */
+@keyframes tabSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.academics-tab-panel,
+.stage-content-panel,
+.facility-spotlight-card,
+.result-card-container,
+.topper-merit-card {
+    animation: tabSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 5. Interactive Card Elevation & 3D Lift on Hover */
+.quick-pillar-card,
+.stage-tab-btn,
+.happening-card,
+.founder-tribute-card,
+.vm-card,
+.facility-spotlight-card,
+.album-collection-card,
+.topper-merit-card {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+.quick-pillar-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(11, 37, 69, 0.15);
+}
+
+.happening-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(11, 37, 69, 0.16);
+}
+
+.happening-card:hover .happening-img-wrap img {
+    transform: scale(1.09);
+}
+
+.happening-img-wrap {
+    overflow: hidden;
+}
+
+.happening-img-wrap img {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 6. Live Broadcast Dot Ripple on Notice Strip */
+@keyframes broadcastRipple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(218, 165, 32, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(218, 165, 32, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(218, 165, 32, 0);
+    }
+}
+
+.notice-live-dot {
+    width: 10px;
+    height: 10px;
+    background: #DAA520;
+    border-radius: 50%;
+    display: inline-block;
+    animation: broadcastRipple 2s infinite;
+    margin-right: 0.5rem;
+}
+
+/* 7. Student Zone Trophy & Merit Glow */
+@keyframes trophyGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 4px rgba(218, 165, 32, 0.4));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 16px rgba(218, 165, 32, 0.85));
+        transform: scale(1.06);
+    }
+}
+
+.trophy-anim-glow {
+    animation: trophyGlow 3.5s ease-in-out infinite;
+}
+
+.topper-merit-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.6rem;
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    box-shadow: 0 8px 25px rgba(11, 37, 69, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.topper-merit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(11, 37, 69, 0.16);
+    border-color: #DAA520;
+}
+
+.topper-merit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0B2545, #DAA520, #0B2545);
+}
+
+/* 8. Shimmer Sweep on Primary CTAs */
+@keyframes shimmerGlow {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.btn-cta-gold {
+    background-size: 200% auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cta-gold:hover {
+    background-position: right center;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 1024px) {
+    .results-grid-layout {
+        grid-template-columns: 1fr !important;
+    }
     .about-stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
