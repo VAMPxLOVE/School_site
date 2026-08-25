@@ -183,7 +183,7 @@ const Admissions = () => {
                                         Our admissions counselors are available Monday to Saturday (8:00 AM – 2:30 PM) to answer your questions regarding transport, curriculum, and fee structures.
                                     </p>
                                     <ul className="facility-features-list">
-                                        <li><span className="check-bullet">📞</span> <strong>Phone:</strong> +91 8287710710</li>
+                                        <li><span className="check-bullet">📞</span> <strong>Helpline:</strong> <a href="tel:+919312558500" style={{ color: '#0B2545', fontWeight: '700', textDecoration: 'none' }}>+91 9312558500</a> / <a href="tel:+918287710710" style={{ color: '#475569', textDecoration: 'none' }}>+91 8287710710</a></li>
                                         <li><span className="check-bullet">✉️</span> <strong>Email:</strong> drpconventschool@gmail.com</li>
                                         <li><span className="check-bullet">📍</span> <strong>Campus:</strong> Near Shiv Vihar Tiraha, Gokalpuri, Delhi-110094</li>
                                     </ul>

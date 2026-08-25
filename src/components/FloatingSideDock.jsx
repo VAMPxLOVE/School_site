@@ -83,13 +83,13 @@ const FloatingSideDock = () => {
                     {/* Phone Helpline */}
                     <li className="dock-item">
                         <a
-                            href="tel:+918287710710"
+                            href="tel:+919312558500"
                             className="dock-btn call-btn"
                             title="Call Admissions Office"
                             aria-label="Call Admissions Office"
                         >
                             <span className="dock-icon">📞</span>
-                            <span className="dock-label">+91 8287710710</span>
+                            <span className="dock-label">+91 9312558500</span>
                         </a>
                     </li>
 

@@ -78,7 +78,9 @@ const Footer = () => {
                             </li>
                             <li>
                                 <span className="contact-icon"><i className="fa-solid fa-phone"></i></span>
-                                <a href="tel:+918287710710">+91 8287710710</a>
+                                <span>
+                                    <a href="tel:+919312558500">+91 9312558500</a> / <a href="tel:+918287710710">+91 8287710710</a>
+                                </span>
                             </li>
                             <li>
                                 <span className="contact-icon"><i className="fa-solid fa-envelope"></i></span>

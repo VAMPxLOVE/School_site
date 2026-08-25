@@ -52,9 +52,12 @@ const Contact = () => {
 
                     <div className="feature-box">
                         <div className="feature-icon-circle">📞</div>
-                        <h3 className="feature-title">Admissions Helpline</h3>
-                        <p className="feature-text">
-                            <a href="tel:+918287710710" style={{ color: '#0B2545', fontWeight: '700', textDecoration: 'none' }}>
+                        <h3 className="feature-title">Helpline & Admissions</h3>
+                        <p className="feature-text" style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                            <a href="tel:+919312558500" style={{ color: '#0B2545', fontWeight: '800', textDecoration: 'none', fontSize: '1.02rem' }}>
+                                +91 9312558500
+                            </a>
+                            <a href="tel:+918287710710" style={{ color: '#475569', fontWeight: '600', textDecoration: 'none', fontSize: '0.9rem' }}>
                                 +91 8287710710
                             </a>
                         </p>

@@ -32,11 +32,11 @@ const Chatbot = () => {
         },
         {
             keywords: ['admission', 'apply', 'register', 'seat', 'enroll', 'form', 'entrance', 'admit'],
-            answer: "📝 **Admissions for Session 2026-27 are currently OPEN** for Pre-Nursery through Class X!\n\n• You can apply online via our **Admissions** page.\n• Collect prospectus from the school reception (Mon-Sat, 8:00 AM – 2:30 PM).\n• Helpline: **+91 8287710710**"
+            answer: "📝 **Admissions for Session 2026-27 are currently OPEN** for Pre-Nursery through Class X!\n\n• You can apply online via our **Admissions** page.\n• Collect prospectus from the school reception (Mon-Sat, 8:00 AM – 2:30 PM).\n• Helpline: **+91 9312558500** / **+91 8287710710**"
         },
         {
             keywords: ['fee', 'fees', 'cost', 'charge', 'quarterly', 'tuition'],
-            answer: "💳 **Fee Structure:** Our fee structure is competitive and structured quarterly. It covers tuition, smart classes, lab maintenance, and co-curricular sports. For exact grade-wise breakdown, please visit the **Admissions Desk** or call **+91 8287710710**."
+            answer: "💳 **Fee Structure:** Our fee structure is competitive and structured quarterly. It covers tuition, smart classes, lab maintenance, and co-curricular sports. For exact grade-wise breakdown, please visit the **Admissions Desk** or call **+91 9312558500**."
         },
         {
             keywords: ['timing', 'time', 'hours', 'open', 'schedule', 'office'],
@@ -48,7 +48,7 @@ const Chatbot = () => {
         },
         {
             keywords: ['contact', 'phone', 'mobile', 'call', 'number', 'email', 'helpline'],
-            answer: "📞 **Contact Credentials:**\n• **Admissions Helpline:** +91 8287710710\n• **Official Email:** drpconventschool@gmail.com\n• **WhatsApp Support:** Available via our quick action side dock."
+            answer: "📞 **Contact Credentials:**\n• **Admissions Helpline:** +91 9312558500 / +91 8287710710\n• **Official Email:** drpconventschool@gmail.com\n• **WhatsApp Support:** Available via our quick action side dock."
         },
         {
             keywords: ['cbse', 'affiliation', 'board', 'code', 'affiliated'],
@@ -100,7 +100,7 @@ const Chatbot = () => {
         }
 
         if (!matchedAnswer) {
-            matchedAnswer = "I would be happy to connect you with our administrative desk for detailed information! 📞 You can call us directly at **+91 8287710710** or email **drpconventschool@gmail.com**.";
+            matchedAnswer = "I would be happy to connect you with our administrative desk for detailed information! 📞 You can call us directly at **+91 9312558500** / **+91 8287710710** or email **drpconventschool@gmail.com**.";
         }
 
         setIsTyping(true);

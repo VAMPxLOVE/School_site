@@ -37,8 +37,8 @@ const Navigation = () => {
                             <i className="fa-solid fa-landmark"></i> <strong>CBSE Affiliation No:</strong> 2131027
                         </span>
                         <span className="top-bar-divider">|</span>
-                        <a href="tel:+918287710710" className="top-bar-item">
-                            <i className="fa-solid fa-phone"></i> +91 8287710710
+                        <a href="tel:+919312558500" className="top-bar-item">
+                            <i className="fa-solid fa-phone"></i> +91 9312558500
                         </a>
                         <span className="top-bar-divider hide-mobile">|</span>
                         <a href="mailto:drpconventschool@gmail.com" className="top-bar-item hide-mobile">
