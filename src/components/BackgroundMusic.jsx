@@ -7,7 +7,7 @@ const BackgroundMusic = () => {
     const playerRef = useRef(null);
     const timerRef = useRef(null);
 
-    const START_TIME = 3; // 0:03 sec
+    const START_TIME = 4; // 0:04 sec
     const END_TIME = 19;  // 0:19 sec
     const VIDEO_ID = 'xVcoYF--0mM';
 
@@ -168,7 +168,7 @@ const BackgroundMusic = () => {
 
                     <div className="music-label-wrap" onClick={togglePlay} role="button" tabIndex={0} title="Toggle Play/Pause">
                         <span className="music-tag-kicker">CAMPUS ANTHEM</span>
-                        <span className="music-title-text">{isPlaying && !isMuted ? 'Playing (0:03 - 0:19)' : (isMuted ? 'Muted' : 'Paused')}</span>
+                        <span className="music-title-text">{isPlaying && !isMuted ? 'Background Music' : (isMuted ? 'Muted' : 'Paused')}</span>
                     </div>
 
                     {/* Mute / Unmute Button */}
